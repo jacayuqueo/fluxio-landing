@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+<!-- Fluxio landing — actualizado 2026-07-05 -->
 <html lang="es">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fluxio — Software HVAC Open Source para ingenieros</title>
+<title>Fluxio — Software de ingeniería HVAC construido desde cero en 6 meses</title>
+<meta name="description" content="¿Sabrías diseñar la climatización de un edificio desde cero? Fluxio lo hace: cálculo físico real, 3D, BIM y reportes automáticos. Proyecto personal desarrollado desde cero en 6 meses.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -43,9 +45,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);margin-bottom:24px}
 .eyebrow::before,.eyebrow::after{content:'';display:block;width:36px;height:1px;background:linear-gradient(90deg,transparent,var(--cyan));opacity:.5}
 .eyebrow::after{background:linear-gradient(90deg,var(--cyan),transparent)}
-h1{font-size:clamp(34px,5.5vw,66px);font-weight:900;line-height:1.08;margin-bottom:22px;letter-spacing:-.5px}
+h1{font-size:clamp(34px,5.5vw,66px);font-weight:900;line-height:1.08;margin-bottom:22px;letter-spacing:-.5px;text-wrap:balance}
 h1 em{color:var(--cyan);font-style:normal}
-.hero-sub{font-size:17px;color:var(--t2);margin-bottom:36px;line-height:1.65}
+.hero-sub{font-size:17px;color:var(--t2);margin-bottom:36px;line-height:1.7;text-wrap:balance;max-width:700px;margin-left:auto;margin-right:auto}
 .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:60px}
 .btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--cyan);color:#050d14;font-size:14px;font-weight:700;padding:13px 28px;border-radius:7px;text-decoration:none;transition:opacity .2s,transform .15s}
 .btn-p:hover{opacity:.85;transform:translateY(-2px)}
@@ -75,8 +77,8 @@ h1 em{color:var(--cyan);font-style:normal}
 .si{max-width:1100px;margin:0 auto}
 .s-label{font-size:10.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);margin-bottom:10px}
 .s-label.g{color:var(--green)}.s-label.a{color:var(--amber)}.s-label.p{color:var(--purple)}.s-label.b{color:var(--blue)}
-h2{font-size:clamp(26px,3vw,42px);font-weight:800;line-height:1.15;margin-bottom:14px}
-.s-sub{font-size:16px;color:var(--t2);max-width:580px;margin-bottom:54px;line-height:1.65}
+h2{font-size:clamp(26px,3vw,42px);font-weight:800;line-height:1.15;margin-bottom:14px;text-wrap:balance;max-width:820px}
+.s-sub{font-size:15.5px;color:var(--t2);max-width:740px;margin-bottom:54px;line-height:1.7;text-wrap:pretty}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
 .rv.vis{opacity:1;transform:none}
 .rv-d1{transition-delay:.08s}.rv-d2{transition-delay:.16s}.rv-d3{transition-delay:.24s}.rv-d4{transition-delay:.32s}
@@ -107,13 +109,175 @@ h2{font-size:clamp(26px,3vw,42px);font-weight:800;line-height:1.15;margin-bottom
 .t-green{background:var(--g2);color:var(--green);border:1px solid #0a2818}
 .t-amber{background:var(--a2);color:var(--amber);border:1px solid #2a1500}
 .t-purple{background:var(--p2);color:var(--purple);border:1px solid #1a0a28}
-.ss-mini-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
+.ss-mini-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:20px}
 .ss-mini{border-radius:7px;overflow:hidden;border:1px solid var(--line);cursor:pointer;transition:border-color .15s,transform .15s}
 .ss-mini:hover{border-color:var(--cyan);transform:translateY(-2px)}
 .ss-mini.active{border-color:var(--cyan)}
 .ss-mini-img{aspect-ratio:16/9;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:26px;position:relative;overflow:hidden}
 .ss-mini-img::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--line2) 1px,transparent 1px),linear-gradient(90deg,var(--line2) 1px,transparent 1px);background-size:20px 20px;opacity:.3}
 .ss-mini-label{padding:8px 10px;font-size:11px;font-weight:600;color:var(--t2);background:var(--bg3);border-top:1px solid var(--line2)}
+
+/* ── FEATURES ── */
+.features-section{background:var(--bg)}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.feat-card{background:var(--bg1);border:1px solid var(--line);border-radius:9px;padding:22px;transition:border-color .15s,transform .15s}
+.feat-card:hover{border-color:var(--cyan);transform:translateY(-2px)}
+.feat-card h4{font-size:14px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.feat-card ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.feat-card li{font-size:12.5px;color:var(--t2);line-height:1.5;padding-left:16px;position:relative}
+.feat-card li::before{content:'▸';position:absolute;left:0;color:var(--cyan);font-size:11px}
+.feat-card.fc-amber li::before{color:var(--amber)}
+.feat-card.fc-green li::before{color:var(--green)}
+.feat-card.fc-purple li::before{color:var(--purple)}
+.feat-card.fc-blue li::before{color:var(--blue)}
+.opt-banner{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin:16px 0}
+.opt-card{border-radius:9px;padding:22px 20px;border:1px solid;position:relative;overflow:hidden}
+.opt-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.oc-1{background:#0a1828;border-color:#1a3888}.oc-1::before{background:var(--blue)}.oc-1 .oc-tag{color:var(--blue)}
+.oc-2{background:#1a1408;border-color:#4a3000}.oc-2::before{background:var(--amber)}.oc-2 .oc-tag{color:var(--amber)}
+.oc-3{background:#0a2018;border-color:#1a5030}.oc-3::before{background:var(--green)}.oc-3 .oc-tag{color:var(--green)}
+.oc-tag{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.oc-title{font-size:15px;font-weight:700;margin-bottom:8px}
+.oc-desc{font-size:12.5px;color:var(--t2);line-height:1.55}
+.report-banner{background:var(--bg1);border:1px solid #4a3000;border-radius:10px;padding:26px 30px;margin-top:16px;position:relative;overflow:hidden}
+.report-banner::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--amber),transparent)}
+.report-banner h4{font-size:16px;font-weight:800;margin-bottom:8px;color:var(--amber)}
+.report-banner p{font-size:13px;color:var(--t2);line-height:1.65;max-width:840px}
+.report-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.report-chip{font-size:11px;font-weight:600;padding:4px 12px;border-radius:4px;background:var(--a2);color:var(--amber);border:1px solid #2a1500}
+@media(max-width:900px){.feat-grid,.opt-banner{grid-template-columns:1fr}}
+
+/* ── ABOUT / COMPLEXITY / CONTACT (reclutadores) ── */
+.about-section{background:var(--bg)}
+.about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.about-card{background:var(--bg1);border:1px solid var(--line);border-radius:10px;padding:28px 24px;transition:border-color .15s,transform .15s}
+.about-card:hover{border-color:var(--cyan);transform:translateY(-2px)}
+.about-card .ac-icon{font-size:30px;display:block;margin-bottom:14px}
+.about-card h3{font-size:16px;font-weight:800;margin-bottom:10px}
+.about-card p{font-size:13.5px;color:var(--t2);line-height:1.7}
+.ac-hl{color:var(--cyan);font-weight:600}
+.complexity-section{background:var(--bg2)}
+.simple-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:44px}
+.simple-card{background:var(--bg1);border:1px solid var(--line);border-radius:9px;padding:22px;display:flex;gap:16px;align-items:flex-start}
+.simple-card .sc-icon{font-size:26px;flex-shrink:0;margin-top:2px}
+.simple-card h4{font-size:14px;font-weight:700;margin-bottom:6px}
+.simple-card p{font-size:12.5px;color:var(--t2);line-height:1.6}
+.sc-analogy{margin-top:8px;color:var(--cyan) !important;font-style:italic}
+.tech-divider{background:var(--bg1);border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);padding:60px 52px;text-align:center}
+.tech-divider h3{font-size:22px;font-weight:800;margin-bottom:10px}
+.tech-divider p{font-size:14px;color:var(--t2);line-height:1.65;max-width:640px;margin:0 auto}
+.contact-section{background:var(--bg2)}
+.contact-inner{text-align:center}
+.contact-inner h2{max-width:680px;margin-left:auto;margin-right:auto}
+.contact-p{font-size:15px;color:var(--t2);line-height:1.75;max-width:620px;margin:18px auto 32px}
+.guide-banner{margin-top:28px;background:var(--bg2);border:1px solid #0d3a4a;border-radius:10px;padding:26px 30px;position:relative;overflow:hidden}
+.guide-banner::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),transparent)}
+.guide-banner h4{font-size:16px;font-weight:800;margin-bottom:8px;color:var(--cyan)}
+.guide-banner p{font-size:13px;color:var(--t2);line-height:1.65;max-width:840px}
+@media(max-width:900px){.about-grid,.simple-grid{grid-template-columns:1fr}.tech-divider{padding:46px 20px}}
+
+/* ── HERO WINDOW (3 fases) ── */
+.hero-win{width:100%;max-width:780px;background:#050d18;border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.65);text-align:left}
+.hw-tabs{display:flex;align-items:center;background:var(--bg2);border-bottom:1px solid var(--line2);overflow-x:auto}
+.hw-dots{display:flex;gap:7px;padding:0 14px;flex-shrink:0}
+.hw-tab{padding:12px 16px;font-size:12.5px;font-weight:600;color:var(--t3);cursor:pointer;border-right:1px solid var(--line2);white-space:nowrap;transition:color .15s,background .15s}
+.hw-tab:first-of-type{border-left:1px solid var(--line2)}
+.hw-tab:hover{color:var(--t)}
+.hw-tab.active{color:var(--cyan);background:var(--bg3)}
+.hw-pane{display:none;padding:24px 28px;min-height:230px}
+.hw-pane.active{display:block}
+.hw-pane-term{padding:0}
+.hw-lead{font-size:14px;color:var(--t2);line-height:1.7;margin-bottom:18px}
+.hw-lead strong{color:var(--t)}
+.hw-chips{display:flex;flex-wrap:wrap;gap:10px}
+.hw-chip{font-size:12px;font-weight:600;padding:7px 14px;border-radius:6px;background:var(--c2);color:var(--cyan);border:1px solid #0d3a4a}
+.hw-rows{display:flex;flex-direction:column;gap:9px}
+.hw-row{display:flex;gap:10px;font-size:12.5px;color:var(--t2);line-height:1.5}
+.hw-row strong{color:var(--t)}
+.hw-foot{margin-top:16px;font-size:12.5px;color:var(--cyan);font-weight:600}
+.hw-steps{display:flex;flex-direction:column;gap:14px;margin-top:4px}
+.hw-step{display:flex;gap:14px;align-items:flex-start;font-size:13px;color:var(--t2);line-height:1.6}
+.hw-step strong{color:var(--t)}
+.hw-n{width:26px;height:26px;border-radius:50%;flex-shrink:0;background:var(--bg3);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--cyan)}
+
+/* ── FOLDS (divulgación progresiva) ── */
+details.fold{border-top:1px solid var(--line2);background:var(--bg)}
+details.fold:last-of-type{border-bottom:1px solid var(--line2)}
+details.fold>summary{list-style:none;cursor:pointer;padding:0 52px;transition:background .15s}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary:hover{background:rgba(34,204,238,.03)}
+.fold-sum{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:18px;padding:26px 0}
+.fold-icon{font-size:24px;flex-shrink:0}
+.fold-t h3{font-size:17px;font-weight:800}
+.fold-t p{font-size:12.5px;color:var(--t3);margin-top:3px}
+.fold-plus{margin-left:auto;font-size:22px;font-weight:400;color:var(--cyan);transition:transform .25s;flex-shrink:0}
+details[open] .fold-plus{transform:rotate(45deg)}
+@media(max-width:900px){details.fold>summary{padding:0 20px}.fold-sum{padding:20px 0}.hw-pane{min-height:0}}
+
+/* ── ZIG-ZAG PROOF ── */
+.zz{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:center;margin-bottom:88px}
+.zz-rev .zz-txt{order:2}.zz-rev .zz-fig{order:1}
+.zz-txt h3{font-size:23px;font-weight:800;line-height:1.25;margin:6px 0 12px}
+.zz-txt p{font-size:14px;color:var(--t2);line-height:1.7;margin-bottom:16px}
+.zz-txt p strong{color:var(--t)}
+.zz-bullets{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
+.zz-bullets li{font-size:12.5px;color:var(--t2);line-height:1.55;padding-left:16px;position:relative}
+.zz-bullets li::before{content:'▸';position:absolute;left:0;color:var(--cyan);font-size:11px}
+.zz-more{font-size:13px;font-weight:600;color:var(--cyan);text-decoration:none}
+.zz-more:hover{text-decoration:underline}
+.zz-fig{border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.5)}
+.zz-fig .ss-img{aspect-ratio:16/10}
+@media(max-width:900px){.zz{grid-template-columns:1fr;gap:22px;margin-bottom:60px}.zz-rev .zz-txt{order:1}.zz-rev .zz-fig{order:2}}
+
+/* ── PROGRESS + AURORA + MARQUEE + PHYSICS ── */
+#progress{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--cyan),var(--purple));z-index:300}
+.glow-b{position:absolute;width:520px;height:380px;border-radius:50%;background:radial-gradient(ellipse,rgba(170,102,255,.05) 0%,transparent 65%);bottom:5%;left:12%;pointer-events:none;animation:drift 14s ease-in-out infinite alternate}
+@keyframes drift{0%{transform:translate(0,0)}100%{transform:translate(90px,-50px)}}
+.hero-win{will-change:transform;transform:perspective(1200px) rotateX(6deg);transform-origin:center top}
+.marquee{overflow:hidden;background:var(--bg);border-bottom:1px solid var(--line2);padding:15px 0;position:relative}
+.marquee::before,.marquee::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
+.marquee::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}
+.marquee::after{right:0;background:linear-gradient(-90deg,var(--bg),transparent)}
+.marquee-track{display:flex;gap:26px;width:max-content;animation:mq 38s linear infinite;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--t3);white-space:nowrap}
+.marquee-track span:nth-child(4n+1){color:var(--t2)}
+@keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.zz-num{font-size:44px;font-weight:900;line-height:1;color:transparent;-webkit-text-stroke:1px var(--t3);margin-bottom:10px;font-family:'JetBrains Mono',monospace}
+.physics-section{background:var(--bg2)}
+.phys-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:30px}
+.phys-card{background:var(--bg1);border:1px solid var(--line);border-radius:9px;padding:22px 20px;transition:border-color .15s,transform .15s}
+.phys-card:hover{border-color:var(--amber);transform:translateY(-2px)}
+.phys-name{font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--t3);margin-bottom:10px}
+.phys-eq{font-family:'JetBrains Mono',monospace;font-size:15px;color:var(--amber);margin-bottom:12px}
+.phys-card p{font-size:12px;color:var(--t2);line-height:1.6}
+.phys-cta{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.phys-src{font-size:11.5px;color:var(--t3);font-family:'JetBrains Mono',monospace}
+@media(max-width:900px){.phys-grid{grid-template-columns:1fr 1fr}.phys-cta{flex-direction:column;align-items:flex-start}}
+
+.stack-note{margin-top:26px;font-size:13px;color:var(--t3);line-height:1.7;max-width:740px;border-left:2px solid var(--blue);padding-left:16px}
+
+/* ── LIGHTBOX ── */
+.ss-img.loaded img{cursor:zoom-in;transition:transform .3s ease}
+.ss-img.loaded:hover img{transform:scale(1.02)}
+#lightbox{position:fixed;inset:0;z-index:500;background:rgba(4,8,16,.94);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:40px;cursor:zoom-out}
+#lightbox.open{display:flex}
+#lightbox img{max-width:95%;max-height:92%;border-radius:8px;border:1px solid var(--line);box-shadow:0 40px 120px rgba(0,0,0,.8)}
+#lightbox .lb-close{position:absolute;top:18px;right:26px;font-size:26px;color:var(--t2);cursor:pointer;transition:color .15s}
+#lightbox .lb-close:hover{color:var(--cyan)}
+#lightbox .lb-cap{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);font-size:13px;color:var(--t2);background:var(--bg1);border:1px solid var(--line);padding:6px 18px;border-radius:20px;white-space:nowrap}
+
+/* ── REPORT VIEWER ── */
+.report-section{background:var(--bg1)}
+.report-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:28px;align-items:start}
+.pdf-shell{border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.5);background:#050d18}
+.pdf-frame{display:block;width:100%;height:640px;border:none;background:#050d18}
+.pdf-fallback{padding:28px;text-align:center;font-size:13px;color:var(--t2);display:none}
+.report-side h3{font-size:17px;font-weight:800;margin-bottom:10px}
+.report-side p{font-size:13.5px;color:var(--t2);line-height:1.65;margin-bottom:16px}
+.report-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:22px}
+.report-list li{font-size:12.5px;color:var(--t2);line-height:1.5;padding-left:20px;position:relative}
+.report-list li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700}
+.report-btns{display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:900px){.report-grid{grid-template-columns:1fr}.pdf-frame{height:440px}.ss-mini-grid{grid-template-columns:1fr 1fr}}
 
 /* ── PANEL / CODE SHARED ── */
 .card{background:var(--bg1);border:1px solid var(--line);border-radius:9px;overflow:hidden}
@@ -248,7 +412,7 @@ td.g{color:var(--green)}td.a{color:var(--amber)}
 .bx-3d{background:#0a2018;color:var(--green);border:1px solid #1a4828;font-size:8.5px}
 
 /* results */
-.results-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.results-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .result-card{background:var(--bg1);border:1px solid var(--line);border-radius:9px;padding:22px}
 .result-card h4{font-size:14px;font-weight:700;margin-bottom:8px}
 .result-card p{font-size:13px;color:var(--t2);line-height:1.55}
@@ -299,6 +463,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line2);padding:56px 52px
 </style>
 </head>
 <body>
+<div id="progress"></div>
 
 <!-- NAV -->
 <nav>
@@ -307,29 +472,64 @@ footer{background:var(--bg2);border-top:1px solid var(--line2);padding:56px 52px
     <span class="nav-text"><span>Fluxio</span></span>
   </a>
   <div class="nav-links">
-    <a href="#screenshots">Galería</a>
-    <a href="#platform">Plataforma</a>
-    <a href="#engine">Motor</a>
-    <a href="#database">Base ASHRAE</a>
-    <a href="#install">Instalación</a>
-    <a href="https://github.com/jacayuqueo/fluxio-landing" class="nav-cta">GitHub →</a>
+    <a href="#hero">Visión</a>
+    <a href="#screenshots">El software</a>
+    <a href="#physics">Fundamentos</a>
+    <a href="#report">Informe</a>
+    <a href="#tech">Técnico</a>
+    <a href="#contact">Contacto</a>
+    <a href="#contact" class="nav-cta">Contáctame →</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="hero">
-  <div class="hero-grid"></div><div class="glow-a"></div><div class="scan-line"></div>
+  <div class="hero-grid"></div><div class="glow-a"></div><div class="glow-b"></div><div class="scan-line"></div>
   <div class="hero-inner">
-    <div class="eyebrow">Software HVAC · Open Source · Python · ASHRAE</div>
-    <h1><em>Fluxio.</em><br>Tu red de ductos, calculada.</h1>
-    <p class="hero-sub">Carga el modelo BIM, construye la red en 3D, elige los fittings — la herramienta calcula con tablas ASHRAE reales y genera el reporte PDF. Sin licencias, sin suscripciones.</p>
+    <div class="eyebrow">Desarrollo independiente · 6 meses · De la física al producto</div>
+    <h1>¿Sabrías diseñar la climatización de un edificio, <em>desde cero</em>?</h1>
+    <p class="hero-sub"><strong style="color:var(--cyan)">Fluxio</strong> resuelve el ciclo completo: modelado 3D, cálculo con física de fluidos normada (ASHRAE · SMACNA), optimización dimensional y emisión del documento de ingeniería. Validado sobre un caso real: la ventilación de una sala eléctrica industrial.</p>
     <div class="hero-btns">
-      <a href="https://github.com/jacayuqueo/fluxio-landing" class="btn-p">Ver en GitHub →</a>
-      <a href="#engine" class="btn-o">Cómo calcula ↓</a>
+      <a href="#screenshots" class="btn-p">Ver el sistema en operación ↓</a>
+      <a href="#report" class="btn-o">Ver el informe que genera ↓</a>
     </div>
-    <div class="term">
-      <div class="term-bar"><div class="td td-r"></div><div class="td td-a"></div><div class="td td-g"></div><span class="term-title">python main_controlador.py — sala_electrica_norte.json</span></div>
-      <div class="term-body" id="term-body"><div><span class="t-p">❯ </span><span class="t-c" id="typed-line"></span><span class="cursor" id="cursor"></span></div></div>
+    <div class="hero-win" id="heroWin">
+      <div class="hw-tabs">
+        <div class="hw-dots"><div class="td td-r"></div><div class="td td-a"></div><div class="td td-g"></div></div>
+        <div class="hw-tab active" data-hw="0">¿Qué es?</div>
+        <div class="hw-tab" data-hw="1">¿Por qué es difícil?</div>
+        <div class="hw-tab" data-hw="2">¿Cómo lo resuelve?</div>
+        <div class="hw-tab" data-hw="3">▶ En acción</div>
+      </div>
+      <div class="hw-pane active">
+        <p class="hw-lead">Software de escritorio para el diseño de redes de climatización: la red se modela en 3D y el sistema <strong>resuelve su comportamiento físico, optimiza las dimensiones y emite el documento de ingeniería final</strong>. Desarrollo propio, disponible en demostración.</p>
+        <div class="hw-chips">
+          <span class="hw-chip">🏢 Edificios · salas eléctricas · minería</span>
+          <span class="hw-chip">🧮 Cálculo normado — ASHRAE</span>
+          <span class="hw-chip">📄 Memoria de cálculo automatizada</span>
+        </div>
+      </div>
+      <div class="hw-pane">
+        <p class="hw-lead">El diseño de ductos exige mecánica de fluidos y normas de cientos de páginas; las herramientas comerciales se licencian por miles de dólares anuales. Construir una alternativa implica dominar <strong>cuatro disciplinas simultáneamente</strong>:</p>
+        <div class="hw-rows">
+          <div class="hw-row">🧮 <span><strong>Física de fluidos</strong> — 36 tablas de ingeniería digitalizadas a mano</span></div>
+          <div class="hw-row">🧊 <span><strong>Gráficos 3D</strong> — un mini-CAD construido dentro del programa</span></div>
+          <div class="hw-row">🏗️ <span><strong>Modelos BIM</strong> — lee los planos 3D de edificios reales</span></div>
+          <div class="hw-row">📄 <span><strong>Documentación automática</strong> — informes técnicos en LaTeX</span></div>
+        </div>
+        <p class="hw-foot">El alcance habitual de un equipo multidisciplinario, condensado en seis meses de desarrollo.</p>
+      </div>
+      <div class="hw-pane">
+        <div class="hw-steps">
+          <div class="hw-step"><span class="hw-n">1</span><span><strong>Modela</strong> la red de ductos en 3D, sobre el modelo BIM real del edificio</span></div>
+          <div class="hw-step"><span class="hw-n">2</span><span><strong>Calcula</strong> — la física se resuelve en tiempo real durante el modelado, sin paso de "calcular"</span></div>
+          <div class="hw-step"><span class="hw-n">3</span><span><strong>Optimiza y documenta</strong> — dimensionamiento óptimo y memoria de cálculo emitida con un clic</span></div>
+        </div>
+        <p class="hw-foot">Resultado: diseños fundamentados, trazables y verificables.</p>
+      </div>
+      <div class="hw-pane hw-pane-term">
+        <div class="term-body" id="term-body"><div><span class="t-p">❯ </span><span class="t-c" id="typed-line"></span><span class="cursor" id="cursor"></span></div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -337,39 +537,330 @@ footer{background:var(--bg2);border-top:1px solid var(--line2);padding:56px 52px
 <!-- STATS -->
 <div class="stats-strip">
   <div class="stats-inner">
-    <div class="stat-item"><div class="stat-num" data-target="30" data-suffix="+">0</div><div class="stat-label">Tablas del Handbook<br>ASHRAE implementadas</div></div>
-    <div class="stat-item"><div class="stat-num g" data-target="3" data-suffix="">0</div><div class="stat-label">Niveles de interpolación<br>1D · 2D · 3D trilineal</div></div>
-    <div class="stat-item"><div class="stat-num a" data-target="20" data-suffix="+">0</div><div class="stat-label">Fittings con C₀<br>calculado en tiempo real</div></div>
-    <div class="stat-item"><div class="stat-num p" data-target="2" data-suffix="">0</div><div class="stat-label">Formatos BIM<br>IFC · STEP</div></div>
+    <div class="stat-item"><div class="stat-num" data-target="6" data-suffix="">0</div><div class="stat-label">Meses de desarrollo<br>de la idea al software completo</div></div>
+    <div class="stat-item"><div class="stat-num g" data-target="4" data-suffix="">0</div><div class="stat-label">Disciplinas integradas<br>física · 3D · software · documentación</div></div>
+    <div class="stat-item"><div class="stat-num a" data-target="36" data-suffix="">0</div><div class="stat-label">Tablas ASHRAE digitalizadas<br>e interpoladas en tiempo real</div></div>
+    <div class="stat-item"><div class="stat-num p" data-target="27" data-suffix="">0</div><div class="stat-label">Páginas de memoria de cálculo<br>emitidas automáticamente</div></div>
   </div>
 </div>
 
-<!-- SCREENSHOTS -->
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true"><div class="marquee-track">
+  <span>Darcy–Weisbach</span><span>·</span><span>Interpolación trilineal</span><span>·</span><span>IFC / STEP</span><span>·</span><span>Clash detection</span><span>·</span><span>Equal Friction</span><span>·</span><span>Memoria LaTeX</span><span>·</span><span>Mapa de presión</span><span>·</span><span>Snap BVH</span><span>·</span><span>TESP</span><span>·</span><span>openBIM</span><span>·</span><span>Planos DXF</span><span>·</span><span>ViewCube</span><span>·</span>
+  <span>Darcy–Weisbach</span><span>·</span><span>Interpolación trilineal</span><span>·</span><span>IFC / STEP</span><span>·</span><span>Clash detection</span><span>·</span><span>Equal Friction</span><span>·</span><span>Memoria LaTeX</span><span>·</span><span>Mapa de presión</span><span>·</span><span>Snap BVH</span><span>·</span><span>TESP</span><span>·</span><span>openBIM</span><span>·</span><span>Planos DXF</span><span>·</span><span>ViewCube</span><span>·</span>
+</div></div>
+
+<!-- PROOF (zig-zag) -->
 <section class="section ss-section" id="screenshots">
   <div class="si">
-    <div class="rv"><div class="s-label">Proyecto real</div><h2>Un proyecto de principio a fin</h2><p class="s-sub">Sala eléctrica real. Modelo BIM importado. Red de ductos construida, calculada y verificada — todo dentro de la misma herramienta.</p></div>
-    <div class="rv rv-d1"><div class="ss-tabs" id="ss-tabs">
-      <div class="ss-tab active" data-tab="0">Vista Isométrica 3D</div>
-      <div class="ss-tab" data-tab="1">Clash Detection</div>
-      <div class="ss-tab" data-tab="2">Análisis de Pérdidas</div>
-      <div class="ss-tab" data-tab="3">Config. HVAC</div>
-    </div></div>
-    <div class="ss-stage rv rv-d2">
-      <div class="ss-pane active" id="pane-0"><div class="ss-frame-bar"><div class="td td-r"></div><div class="td td-a"></div><div class="td td-g"></div><span class="ss-frame-title">Visor 3D — Sala_Eléctrica_2630-ER-910_A.ifc · Modelo estructural cargado</span></div><div class="ss-img"><div class="ss-ph-grid"></div><img src="screenshots/main_view.png" alt="Vista isométrica 3D — modelo estructural" onload="this.parentElement.classList.add('loaded')"><div class="ss-ph"><span class="ss-ph-icon">⬡</span><span class="ss-ph-label">Cargando…</span></div></div><div class="ss-caption"><div class="ss-cap-l"><h4>Sala Eléctrica — Modelo BIM importado desde IFC</h4><p>13 ensambles detectados · 15 456 elementos filtrados y cargados vía diálogo visual · Escena lista para trazado de ductos</p></div><span class="ss-cap-tag t-cyan">PyVista · VTK · ifcopenshell</span></div></div>
-      <div class="ss-pane" id="pane-1"><div class="ss-frame-bar"><div class="td td-r"></div><div class="td td-a"></div><div class="td td-g"></div><span class="ss-frame-title">Clash Detection — interferencias ductos/estructura</span></div><div class="ss-img"><div class="ss-ph-grid"></div><img src="screenshots/clash_detection.png" alt="Clash detection" onload="this.parentElement.classList.add('loaded')"><div class="ss-ph"><span class="ss-ph-icon">⚡</span><span class="ss-ph-label">Detección de interferencias — próximamente</span></div></div><div class="ss-caption"><div class="ss-cap-l"><h4>Detección de Interferencias en Tiempo Real</h4><p>Verificación automática de colisiones entre ductos y elementos estructurales</p></div><span class="ss-cap-tag t-amber">Clash Detection · STEP · gmsh</span></div></div>
-      <div class="ss-pane" id="pane-2"><div class="ss-frame-bar"><div class="td td-r"></div><div class="td td-a"></div><div class="td td-g"></div><span class="ss-frame-title">Análisis de Pérdida de Presión — sección crítica</span></div><div class="ss-img"><div class="ss-ph-grid"></div><img src="screenshots/pressure_report.png" alt="Análisis de pérdidas" onload="this.parentElement.classList.add('loaded')"><div class="ss-ph"><span class="ss-ph-icon">📊</span><span class="ss-ph-label">Análisis de pérdidas — próximamente</span></div></div><div class="ss-caption"><div class="ss-cap-l"><h4>Tabla de Pérdidas por Sección — Sección Crítica Identificada</h4><p>ΔP fricción + ΔP dinámica por tramo · ΔP acumulada · Margen vs. ESP_dis del equipo RTU</p></div><span class="ss-cap-tag t-green">ASHRAE Cap.21 · Equal Friction</span></div></div>
-      <div class="ss-pane" id="pane-3"><div class="ss-frame-bar"><div class="td td-r"></div><div class="td td-a"></div><div class="td td-g"></div><span class="ss-frame-title">Configuración HVAC — McQuay MQPI4xxxRTH335A</span></div><div class="ss-img"><div class="ss-ph-grid"></div><img src="screenshots/hvac_dialog.png" alt="Configuración HVAC" onload="this.parentElement.classList.add('loaded')"><div class="ss-ph"><span class="ss-ph-icon">⚙️</span><span class="ss-ph-label">Diálogo HVAC — próximamente</span></div></div><div class="ss-caption"><div class="ss-cap-l"><h4>Configuración del Equipo RTU</h4><p>Q_dis (m³/h) · ESP_dis (Pa) · T_impulsión · Dimensiones de carcasa</p></div><span class="ss-cap-tag t-purple">McQuay RTU · R410A · T3</span></div></div>
+    <div class="rv"><div class="s-label">El software</div><h2>Evidencia, no promesas.</h2><p class="s-sub">Capturas reales del sistema, sin retoques — selecciona cualquiera para ampliarla.</p></div>
+
+    <div class="zz rv rv-d1">
+      <div class="zz-txt">
+        <div class="zz-num">01</div>
+        <div class="s-label">Diseño 3D</div>
+        <h3>Modelado pieza a pieza, con rigor de CAD</h3>
+        <p>Cada codo, transición o rejilla sale de una biblioteca basada en el estándar <strong>ASHRAE</strong> — la norma de referencia mundial en climatización. Las dimensiones se propagan automáticamente entre piezas conectadas.</p>
+        <ul class="zz-bullets">
+          <li>Biblioteca completa: codos, TEE, transiciones, difusores, dampers, bocinas…</li>
+          <li>Asistentes de diseño y calculadora de parámetros integrados</li>
+          <li>Editar, reemplazar, deshacer — flujo de trabajo real de ingeniería</li>
+        </ul>
+        <a class="zz-more" href="#features">Catálogo funcional completo ↓</a>
+      </div>
+      <div class="zz-fig"><div class="ss-frame-bar"><div class="td td-r"></div><div class="td td-a"></div><div class="td td-g"></div><span class="ss-frame-title">Red de ductos — biblioteca ASHRAE</span></div><div class="ss-img"><img src="screenshots/red_ductos_iso.png" alt="Red de ductos 3D construida con fittings ASHRAE" onload="this.parentElement.classList.add('loaded')"></div></div>
     </div>
-    <div class="ss-mini-grid rv rv-d3">
-      <div class="ss-mini active" data-select="0"><div class="ss-mini-img" style="background-image:url('screenshots/main_view.png');background-size:cover;background-position:center"></div><div class="ss-mini-label">Vista Isométrica 3D</div></div>
-      <div class="ss-mini" data-select="1"><div class="ss-mini-img">⚡</div><div class="ss-mini-label">Clash Detection</div></div>
-      <div class="ss-mini" data-select="2"><div class="ss-mini-img">📊</div><div class="ss-mini-label">Análisis de Pérdidas</div></div>
-      <div class="ss-mini" data-select="3"><div class="ss-mini-img">⚙️</div><div class="ss-mini-label">Config. HVAC</div></div>
+
+    <div class="zz zz-rev rv rv-d1">
+      <div class="zz-txt">
+        <div class="zz-num">02</div>
+        <div class="s-label g">Cálculo y optimización</div>
+        <h3>La física no se estima: se calcula y se ve</h3>
+        <p>Mientras construyes, cada tramo se resuelve con las ecuaciones del manual ASHRAE. El <strong>mapa de presión</strong> colorea la red y expone dónde se disipa la energía — la ruta crítica se identifica automáticamente.</p>
+        <ul class="zz-bullets">
+          <li>36 tablas oficiales digitalizadas, interpoladas en tiempo real</li>
+          <li>Mapa de presión + flujo de partículas animado</li>
+          <li>3 métodos de optimización automática de dimensiones</li>
+        </ul>
+        <a class="zz-more" href="#tech">Metodología de cálculo ↓</a>
+      </div>
+      <div class="zz-fig"><div class="ss-frame-bar"><div class="td td-r"></div><div class="td td-a"></div><div class="td td-g"></div><span class="ss-frame-title">Mapa de presión — Pérdida acumulada (Pa)</span></div><div class="ss-img"><img src="screenshots/mapa_presion.png" alt="Mapa de presión — pérdida acumulada en Pa" onload="this.parentElement.classList.add('loaded')"></div></div>
+    </div>
+
+    <div class="zz rv rv-d1">
+      <div class="zz-txt">
+        <div class="zz-num">03</div>
+        <div class="s-label p">Edificios reales</div>
+        <h3>Opera sobre el edificio real, no sobre un esquema</h3>
+        <p>Fluxio abre los modelos <strong>BIM</strong> con que la industria proyecta y construye (IFC/STEP): aquí, una sala eléctrica real de más de <strong>15&nbsp;000 elementos</strong>, filtrado en vivo, lista para el trazado de ductos.</p>
+        <ul class="zz-bullets">
+          <li>Importación IFC/STEP con caché — la segunda carga es instantánea</li>
+          <li>Detección de choques entre ductos y estructura (clash)</li>
+          <li>Medición milimétrica sobre el modelo y cortes en 3 ejes</li>
+        </ul>
+      </div>
+      <div class="zz-fig"><div class="ss-frame-bar"><div class="td td-r"></div><div class="td td-a"></div><div class="td td-g"></div><span class="ss-frame-title">Sala eléctrica real — modelo BIM importado (IFC)</span></div><div class="ss-img"><img src="screenshots/main_view.png" alt="Modelo BIM de sala eléctrica importado desde IFC" onload="this.parentElement.classList.add('loaded')"></div></div>
+    </div>
+
+    <div class="zz zz-rev rv rv-d1" style="margin-bottom:0">
+      <div class="zz-txt">
+        <div class="zz-num">04</div>
+        <div class="s-label a">Producto completo</div>
+        <h3>No es un prototipo: es una herramienta terminada</h3>
+        <p>Interfaz estilo <strong>Autodesk Inventor</strong> con tema oscuro, persistencia completa de proyectos, y exportación a los formatos que usa la industria — construido a medida en su totalidad.</p>
+        <ul class="zz-bullets">
+          <li>Cinta de comandos, panel editable y cubo de navegación 3D</li>
+          <li>Exporta a IFC (openBIM) y planos CAD (DXF)</li>
+          <li>Reporte dimensional y fotos 3D en alta resolución</li>
+        </ul>
+        <a class="zz-more" href="#report">Ver el documento emitido ↓</a>
+      </div>
+      <div class="zz-fig"><div class="ss-frame-bar"><div class="td td-r"></div><div class="td td-a"></div><div class="td td-g"></div><span class="ss-frame-title">Fluxio — interfaz completa</span></div><div class="ss-img"><img src="screenshots/ui_completa.png" alt="Interfaz completa de Fluxio estilo Inventor" onload="this.parentElement.classList.add('loaded')"></div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PHYSICS -->
+<section class="section physics-section" id="physics">
+  <div class="si">
+    <div class="rv">
+      <div class="s-label a">Fundamento físico</div>
+      <h2>Cada pérdida de presión tiene una ecuación detrás.</h2>
+      <p class="s-sub">El motor no aplica factores genéricos: implementa la física del ASHRAE Handbook, en línea con los criterios constructivos de SMACNA. La guía técnica adjunta documenta cada concepto, su ecuación y sus límites de validez.</p>
+    </div>
+    <div class="phys-grid rv rv-d1">
+      <div class="phys-card">
+        <div class="phys-name">Presión total</div>
+        <div class="phys-eq">P<sub>t</sub> = P<sub>s</sub> + P<sub>d</sub></div>
+        <p>La energía mecánica del flujo se compone de presión estática y dinámica; toda pérdida se descuenta de este total.</p>
+      </div>
+      <div class="phys-card">
+        <div class="phys-name">Bernoulli generalizada</div>
+        <div class="phys-eq">P<sub>t,1</sub> = P<sub>t,2</sub> + ΔP<sub>pérdidas</sub></div>
+        <p>Conservación de la energía entre secciones, incorporando el término de pérdidas irreversibles.</p>
+      </div>
+      <div class="phys-card">
+        <div class="phys-name">Darcy–Weisbach</div>
+        <div class="phys-eq">ΔP<sub>f</sub> = f · (L/D<sub>h</sub>) · ρV²/2</div>
+        <p>Pérdida por fricción en tramos rectos; el factor f se resuelve vía Colebrook / Altshul.</p>
+      </div>
+      <div class="phys-card">
+        <div class="phys-name">Coeficientes de pérdida C</div>
+        <div class="phys-eq">ΔP<sub>d</sub> = C<sub>0</sub> · P<sub>d</sub></div>
+        <p>Pérdida dinámica en accesorios, interpolada de la Duct Fitting Database de ASHRAE.</p>
+      </div>
+    </div>
+    <div class="report-grid rv rv-d2" style="margin-top:14px">
+      <div class="pdf-shell">
+        <div class="ss-frame-bar"><div class="td td-r"></div><div class="td td-a"></div><div class="td td-g"></div><span class="ss-frame-title">Guia_tecnica_perdida_presion.pdf — Fundamentos, ecuaciones y condiciones de contorno</span></div>
+        <iframe class="pdf-frame" src="report/Guia_tecnica_perdida_presion.pdf#view=FitH" title="Guía técnica — pérdida de presión en ductos" loading="lazy"></iframe>
+      </div>
+      <div class="report-side">
+        <h3>📘 Qué desarrolla la guía</h3>
+        <p>Documento técnico de acceso público que fundamenta cada cálculo del motor:</p>
+        <ul class="report-list">
+          <li>Presión total, estática y dinámica; continuidad y Bernoulli generalizada</li>
+          <li>Pérdidas por fricción — Darcy–Weisbach y Colebrook–White</li>
+          <li>Pérdidas locales en accesorios — coeficientes C</li>
+          <li>Métodos de dimensionamiento: fricción constante, recuperación estática, TEL, T-method</li>
+          <li>Curva del sistema, selección de ventilador y efecto de sistema (AMCA 201)</li>
+          <li>Ejemplo resuelto según ASHRAE</li>
+        </ul>
+        <div class="phys-src" style="margin-bottom:18px">Fuentes: ASHRAE Handbook — Duct Design · SMACNA · AMCA 201 · Duct Fitting Database · ACCA Manual D</div>
+        <div class="report-btns">
+          <a class="btn-p" href="report/Guia_tecnica_perdida_presion.pdf" target="_blank" rel="noopener">Abrir PDF completo ↗</a>
+          <a class="btn-o" href="report/Guia_tecnica_perdida_presion.pdf" download>Descargar</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+<details class="fold" id="features">
+  <summary><div class="fold-sum"><span class="fold-icon">🧰</span><div class="fold-t"><h3>Catálogo funcional completo</h3><p>Biblioteca de fittings, cálculo, optimización, BIM, medición y emisión de reportes — el detalle íntegro</p></div><span class="fold-plus">＋</span></div></summary>
+<section class="section features-section" id="features-in">
+  <div class="si">
+    <div class="rv">
+      <div class="s-label">Funcionalidades</div>
+      <h2>Todo el flujo de trabajo HVAC en una sola herramienta.</h2>
+      <p class="s-sub">Desde el trazado de la red sobre el modelo BIM hasta la memoria de cálculo lista para entregar — diseño, análisis, optimización, medición y reportes.</p>
+    </div>
+
+    <div class="feat-grid rv rv-d1">
+      <div class="feat-card">
+        <h4>🧰 Diseño y modelado</h4>
+        <ul>
+          <li>Modo Inyección / Retorno con punto de referencia inicial X/Y/Z</li>
+          <li>Biblioteca de fittings ASHRAE: ductos rectos, codos (CR3-1/6/9), transiciones (SR7-17, SR4-2, ER4-2…), TEE (SR5-13), Wye (SR5-14), difusores, rejillas, dampers, bocinas, bifurcaciones, HVAC y marcos visuales</li>
+          <li>Vista previa del diagrama ASHRAE y parámetros por tipo de pieza</li>
+          <li>Añadir, Editar, Reemplazar, Eliminar y Deshacer figuras · edición de caudal de rejilla · selección de salida en piezas ramificadas</li>
+          <li>Herencia automática de dimensiones entre piezas conectadas</li>
+          <li>Asistentes de diseño: SR7-17, SR5-13 y calculadora de parámetros</li>
+          <li>Lista de figuras filtrable (General / Inyección / Retorno) con resaltado en 3D</li>
+        </ul>
+      </div>
+      <div class="feat-card fc-green">
+        <h4>📊 Cálculo y análisis</h4>
+        <ul>
+          <li>Análisis completo: Darcy-Weisbach (fricción) + coeficientes C₀ por accesorio (ASHRAE)</li>
+          <li>Balance de caudales · densidad del aire corregida por altitud y temperatura</li>
+          <li>Rutas críticas de inyección y retorno · pérdida total del sistema (TESP)</li>
+          <li>Mapa de presión: colorea los ductos por presión estática con flujo de partículas animado</li>
+          <li>Verificación de offset ducto-marco</li>
+        </ul>
+      </div>
+      <div class="feat-card fc-purple">
+        <h4>🧱 Modelos 3D / BIM — IFC · STEP</h4>
+        <ul>
+          <li>Carga IFC/STEP con caché VTP — la segunda carga es instantánea</li>
+          <li>Escaneo de ensambles en segundo plano y filtro visual pre-carga</li>
+          <li>Filtro de elementos en vivo (sin re-importar) con categorías descritas — luminaria, estructura, escalerilla, canalización, ducto, tornillería… — y buscador</li>
+          <li>Detección de interferencias (clash) IFC ↔ ductos</li>
+          <li>Corte / sección en 1–3 ejes por planos de GPU — fluido en modelos gigantes</li>
+          <li>Picker de coordenadas sobre el modelo · lista de modelos de referencia con visibilidad por checkbox</li>
+        </ul>
+      </div>
+      <div class="feat-card fc-blue">
+        <h4>📏 Medición precisa y global</h4>
+        <ul>
+          <li>Punto a punto con picking de celda exacto + snap inteligente: conexión, esquina, punto medio, superficie — con preview de hover</li>
+          <li>Entre piezas: centro a centro y cara a cara (distancia mínima entre superficies)</li>
+          <li>Funciona en ductos e IFC/STEP, fluido incluso en modelos enormes (locators BVH)</li>
+          <li>Registro de mediciones: tabla ΔX/ΔY/ΔZ + resultante, re-dibujo al seleccionar fila, guardado en .txt</li>
+        </ul>
+      </div>
+      <div class="feat-card fc-amber">
+        <h4>📸 Capturas y 🧭 navegación</h4>
+        <ul>
+          <li>Foto 3D — render del visor en alta resolución (×3) a PNG con nombre y fecha</li>
+          <li>Pantalla — captura de la ventana completa componiendo UI + visor 3D</li>
+          <li>ViewCube clicable estilo Inventor: caras → vistas ortográficas, esquinas → isométrica</li>
+          <li>Grupo Vista: Isométrica y Encuadrar</li>
+        </ul>
+      </div>
+      <div class="feat-card">
+        <h4>📁 Proyecto e interfaz</h4>
+        <ul>
+          <li>Guardar / Cargar proyecto · parámetros iniciales · limpiar escena</li>
+          <li>Interfaz estilo Inventor: cinta de comandos con iconos</li>
+          <li>Tema oscuro macOS por defecto · panel editable a la izquierda · divisor arrastrable</li>
+          <li>Intro animada FLUXIO al abrir</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Optimización -->
+    <div class="rv rv-d2" style="margin-top:44px">
+      <div class="s-label a" style="margin-bottom:14px">⚡ Optimización — tres métodos</div>
+      <div class="opt-banner">
+        <div class="opt-card oc-1">
+          <div class="oc-tag">Método 1</div>
+          <div class="oc-title">Optimización local por elemento</div>
+          <div class="oc-desc">Explora el espacio de configuraciones geométricas del fitting seleccionado — relaciones de aspecto, radios, ángulos — evalúa el C₀ resultante por interpolación ASHRAE y jerarquiza las alternativas por ΔP.</div>
+        </div>
+        <div class="opt-card oc-2">
+          <div class="oc-tag">Método 2</div>
+          <div class="oc-title">Optimización global de ruta crítica</div>
+          <div class="oc-desc">Recorre la ruta de máxima caída acumulada y construye un plan secuencial de sustituciones, evaluando cada iteración contra la restricción Σ ΔP ≤ ESP<sub>dis</sub> hasta converger a la presión objetivo.</div>
+        </div>
+        <div class="opt-card oc-3">
+          <div class="oc-tag">Método 3</div>
+          <div class="oc-title">Fricción Constante</div>
+          <div class="oc-desc">Dimensionamiento Equal Friction: asigna a cada tramo secciones W×H comerciales que igualan el gradiente de pérdida (Pa/m), respetando restricciones dimensionales de alto/ancho por zona.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reportes -->
+    <div class="report-banner rv rv-d3">
+      <h4>📄 Memoria de cálculo maestra — modo automático · LaTeX · calidad editorial</h4>
+      <p>Con un clic, Fluxio compone y compila una memoria de cálculo profesional en PDF vía LaTeX: esquema del sistema por vistas (solo lo visible, etiquetas centradas), condiciones de diseño, parámetros del equipo HVAC, rutas críticas, tablas de pérdidas por sección (título y tabla en la misma hoja), coeficientes por accesorio, resumen y metodología. Identidad documental neutra por defecto — código FLX si no se define empresa/proyecto.</p>
+      <div class="report-chips">
+        <span class="report-chip">PDF / LaTeX automático</span>
+        <span class="report-chip">Reporte dimensional .txt</span>
+        <span class="report-chip">Export IFC — openBIM con resultados</span>
+        <span class="report-chip">Planos CAD (DXF) por pieza</span>
+      </div>
+    </div>
+  </div>
+</section>
+</details>
+
+<section class="section report-section" id="report">
+  <div class="si">
+    <div class="rv">
+      <div class="s-label a">Informe</div>
+      <h2>Memoria de cálculo real, generada por Fluxio.</h2>
+      <p class="s-sub">El documento FLX-20260705 tal como lo emite el sistema: compuesto y compilado en LaTeX de forma íntegramente automática.</p>
+    </div>
+    <div class="report-grid rv rv-d1">
+      <div class="pdf-shell">
+        <div class="ss-frame-bar"><div class="td td-r"></div><div class="td td-a"></div><div class="td td-g"></div><span class="ss-frame-title">Reporte_FLX-20260705.pdf — Memoria de dimensionamiento de ducto y pérdida de carga</span></div>
+        <iframe class="pdf-frame" src="report/Reporte_FLX-20260705.pdf#view=FitH" title="Memoria de cálculo Fluxio" loading="lazy"></iframe>
+        <div class="pdf-fallback" id="pdf-fallback">Tu navegador no puede mostrar el PDF embebido — <a href="report/Reporte_FLX-20260705.pdf" style="color:var(--cyan)">ábrelo aquí</a>.</div>
+      </div>
+      <div class="report-side">
+        <h3>📄 Qué incluye el documento</h3>
+        <p>Emitido por <code>Reporte_LaTeX.py</code> con identidad documental neutra (código FLX). Carátula con tabla de revisiones, seguida de:</p>
+        <ul class="report-list">
+          <li>Esquema del sistema por vistas — solo lo visible, con etiquetas de sección centradas</li>
+          <li>Condiciones de diseño y densidad del aire corregida por altitud/temperatura</li>
+          <li>Parámetros del equipo HVAC</li>
+          <li>Resumen de caída de presión y rutas críticas (inyección / retorno)</li>
+          <li>Coeficientes de pérdida por accesorio, con referencia a la tabla ASHRAE usada</li>
+          <li>Tablas de pérdidas por sección — título y tabla en la misma hoja</li>
+          <li>Metodología de cálculo completa</li>
+        </ul>
+        <div class="report-btns">
+          <a class="btn-p" href="report/Reporte_FLX-20260705.pdf" target="_blank" rel="noopener">Abrir PDF completo ↗</a>
+          <a class="btn-o" href="report/Reporte_FLX-20260705.pdf" download>Descargar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="section" id="journey" style="background:var(--bg)">
+  <div class="si">
+    <div class="rv"><div class="s-label g">El proceso</div><h2>6 meses, 5 fases — sin atajos.</h2><p class="s-sub">Cada fase implicó estudiar un dominio nuevo y construir sobre él en paralelo: física, computación gráfica, estándares y producto.</p></div>
+    <div class="pipeline rv rv-d1">
+      <div class="pipe-step"><div class="pipe-icon">🧮</div><div class="pipe-title">Fase 1 — Motor de cálculo</div><div class="pipe-desc">Física de fluidos + digitalización de las 36 tablas ASHRAE</div></div>
+      <div class="pipe-step"><div class="pipe-icon">🧊</div><div class="pipe-title">Fase 2 — Visor 3D</div><div class="pipe-desc">Biblioteca de piezas, edición, herencia de dimensiones</div></div>
+      <div class="pipe-step"><div class="pipe-icon">🏗️</div><div class="pipe-title">Fase 3 — BIM</div><div class="pipe-desc">Importar edificios reales (IFC/STEP), clash, cortes, medición</div></div>
+      <div class="pipe-step"><div class="pipe-icon">⚡</div><div class="pipe-title">Fase 4 — Optimización</div><div class="pipe-desc">Tres métodos automáticos de dimensionamiento</div></div>
+      <div class="pipe-step"><div class="pipe-icon">📄</div><div class="pipe-title">Fase 5 — Reportes</div><div class="pipe-desc">Memoria de cálculo LaTeX, exportación IFC/DXF, pulido</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section class="section" id="stack" style="background:var(--bg1)">
+  <div class="si">
+    <div class="rv">
+      <div class="s-label b">Stack tecnológico</div>
+      <h2>Herramientas libres, de grado industrial.</h2>
+      <p class="s-sub">La elección del stack no es casual: cada componente es software libre con décadas de madurez — el mismo que usan laboratorios científicos y la industria. Resultado: cero costo de licenciamiento y ninguna dependencia propietaria en todo el ciclo, del cálculo al documento final.</p>
+    </div>
+    <div class="stack-row rv rv-d1" style="margin-top:0">
+      <div class="stack-pill"><span style="font-size:22px">🐍</span><div><h4>Python</h4><p>Ecosistema científico maduro — sin licencias</p></div></div>
+      <div class="stack-pill"><span style="font-size:22px">🖼️</span><div><h4>PyQt6</h4><p>GUI de escritorio multiplataforma, libre</p></div></div>
+      <div class="stack-pill"><span style="font-size:22px">🔷</span><div><h4>PyVista · VTK</h4><p>Visualización científica de grado industrial</p></div></div>
+      <div class="stack-pill"><span style="font-size:22px">📐</span><div><h4>NumPy</h4><p>Cálculo vectorial — estándar de facto</p></div></div>
+      <div class="stack-pill"><span style="font-size:22px">🏗️</span><div><h4>ifcopenshell</h4><p>openBIM — estándar abierto ISO 16739</p></div></div>
+      <div class="stack-pill"><span style="font-size:22px">🔺</span><div><h4>gmsh</h4><p>Tessellation STEP — ISO 10303</p></div></div>
+      <div class="stack-pill"><span style="font-size:22px">📄</span><div><h4>LaTeX</h4><p>Composición de calidad editorial — estándar científico</p></div></div>
+      <div class="stack-pill"><span style="font-size:22px">✏️</span><div><h4>ezdxf</h4><p>Planos CAD DXF, interoperables</p></div></div>
+    </div>
+    <p class="stack-note rv rv-d2">La madurez del stack no es teórica: VTK sostiene visualización de simulaciones de gran escala, LaTeX compone la literatura científica mundial e IFC/STEP son normas ISO. El aporte de ingeniería está en la integración.</p>
+  </div>
+</section>
+
+<details class="fold" id="tech">
+  <summary><div class="fold-sum"><span class="fold-icon">⚙️</span><div class="fold-t"><h3>Arquitectura e implementación — para perfiles técnicos</h3><p>Arquitectura, algoritmos de grafos, interpolación multidimensional y las 36 tablas ASHRAE</p></div><span class="fold-plus">＋</span></div></summary>
 <!-- ══════════════════════════════════════
+     SECTION 1 — ENGINEERING PLATFORM<!-- ══════════════════════════════════════
      SECTION 1 — ENGINEERING PLATFORM
 ══════════════════════════════════════ -->
 <section class="section platform-section" id="platform">
@@ -419,9 +910,11 @@ footer{background:var(--bg2);border-top:1px solid var(--line2);padding:56px 52px
         <div class="layer-label"><span style="color:var(--green)">Persistencia</span></div>
         <div class="layer-content">
           <span class="layer-pill lp-green">JSON — topología de red</span>
-          <span class="layer-pill lp-green">VTP — malla 3D (PolyData)</span>
-          <span class="layer-pill lp-green">PDF — reporte de resultados</span>
-          <span class="layer-pill lp-green">Prueba_PDF.py · ReportLab</span>
+          <span class="layer-pill lp-green">VTP — malla 3D con caché</span>
+          <span class="layer-pill lp-green">PDF/LaTeX — memoria de cálculo</span>
+          <span class="layer-pill lp-green">IFC — export openBIM</span>
+          <span class="layer-pill lp-green">DXF — planos por pieza</span>
+          <span class="layer-pill lp-green">Reporte_LaTeX.py</span>
         </div>
       </div>
     </div>
@@ -640,7 +1133,7 @@ footer{background:var(--bg2);border-top:1px solid var(--line2);padding:56px 52px
     <div class="rv rv-d3" style="margin-top:48px">
       <div class="s-label g" style="margin-bottom:18px">Salidas del análisis hidráulico</div>
       <div class="results-grid">
-        <div class="result-card">
+                <div class="result-card">
           <h4 style="color:var(--cyan)">📊 Tabla de pérdidas por tramo</h4>
           <p>Cada sección muestra velocidad, presión dinámica, diámetro hidráulico, Reynolds, coeficiente de fricción λ, pérdida por fricción, C₀ del fitting y pérdida total acumulada — todo en Pa.</p>
         </div>
@@ -649,51 +1142,28 @@ footer{background:var(--bg2);border-top:1px solid var(--line2);padding:56px 52px
           <p>La sección crítica se identifica automáticamente por máxima caída acumulada. El motor compara Σ ΔP contra el External Static Pressure del RTU y reporta el margen disponible o la condición de sobreextensión hidráulica.</p>
         </div>
         <div class="result-card">
-          <h4 style="color:var(--amber)">📄 Reporte PDF listo para entregar</h4>
-          <p>Un PDF con la tabla completa, la sección crítica marcada y los parámetros del equipo. Generado con un clic — sin copiar nada a Excel ni a Word.</p>
+          <h4 style="color:var(--purple)">🗺️ Mapa de presión + flujo animado</h4>
+          <p>Los ductos se colorean por presión estática y un flujo de partículas animado muestra la dirección del aire — el diagnóstico visual de la red completa de un vistazo.</p>
+        </div>
+        <div class="result-card">
+          <h4 style="color:var(--amber)">📄 Memoria de cálculo LaTeX lista para entregar</h4>
+          <p>Compilada automáticamente en LaTeX con calidad de documento de ingeniería: esquema por vistas, rutas críticas, tablas por sección, coeficientes y metodología. Un clic — sin copiar nada a Excel ni a Word.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
+</details>
 
-<!-- INSTALL -->
-<section class="section install-section" id="install">
-  <div class="si">
-    <div class="rv"><div class="s-label">Instalación</div><h2>Setup en tres pasos. Sin dependencias propietarias.</h2></div>
-    <div class="install-grid rv rv-d1">
-      <div class="card">
-        <div class="card-hdr"><div class="td td-r" style="width:10px;height:10px;border-radius:50%;background:#ff5555"></div><div class="td td-a" style="width:10px;height:10px;border-radius:50%;background:#ffbb33"></div><div class="td td-g" style="width:10px;height:10px;border-radius:50%;background:#44cc66"></div><span style="margin-left:8px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--t3)">bash</span></div>
-        <pre><span class="co"># 1. Clonar</span>
-<span class="t3">$ </span><span style="color:var(--cyan)">git clone</span> <span style="color:var(--green)">https://github.com/jacayuqueo/fluxio-landing</span>
-<span class="t3">$ </span><span style="color:var(--cyan)">cd</span> hvac-duct-analyzer
-
-<span class="co"># 2. Dependencias base</span>
-<span class="t3">$ </span><span style="color:var(--cyan)">pip install</span> pyqt6 pyvista pyvistaqt numpy vtk
-
-<span class="co"># Opcional — importación IFC</span>
-<span class="t3">$ </span><span style="color:var(--cyan)">pip install</span> ifcopenshell
-
-<span class="co"># Opcional — tessellation STEP precisa</span>
-<span class="t3">$ </span><span style="color:var(--cyan)">pip install</span> gmsh
-
-<span class="co"># 3. Ejecutar</span>
-<span class="t3">$ </span><span style="color:var(--cyan)">python</span> main_controlador.py</pre>
-      </div>
-      <div class="steps">
-        <div class="step"><div class="step-n">1</div><div><h4>Clona el repositorio</h4><p>Necesitas Python 3.10 o más reciente. Funciona en Windows 10/11. Linux y macOS en prueba.</p></div></div>
-        <div class="step"><div class="step-n">2</div><div><h4>Instala las dependencias</h4><p>El núcleo es PyQt6 + PyVista + NumPy. Si vas a importar modelos BIM agrega <code>ifcopenshell</code> o <code>gmsh</code> según el formato.</p></div></div>
-        <div class="step"><div class="step-n">3</div><div><h4>Ejecuta y empieza a diseñar</h4><p>Nombre del proyecto → equipo RTU → red de ductos. El cálculo ASHRAE corre mientras construyes la red, sin botón de "calcular".</p></div></div>
-      </div>
-    </div>
-    <div class="stack-row rv rv-d2">
-      <div class="stack-pill"><span style="font-size:22px">🐍</span><div><h4>Python 3.10+</h4><p>Lenguaje base</p></div></div>
-      <div class="stack-pill"><span style="font-size:22px">🖼️</span><div><h4>PyQt6</h4><p>GUI de escritorio</p></div></div>
-      <div class="stack-pill"><span style="font-size:22px">🔷</span><div><h4>PyVista · VTK</h4><p>Visualización 3D</p></div></div>
-      <div class="stack-pill"><span style="font-size:22px">📐</span><div><h4>NumPy</h4><p>Cálculo vectorial</p></div></div>
-      <div class="stack-pill"><span style="font-size:22px">🏗️</span><div><h4>ifcopenshell</h4><p>Importación IFC</p></div></div>
-      <div class="stack-pill"><span style="font-size:22px">🔺</span><div><h4>gmsh</h4><p>Tessellation STEP</p></div></div>
-      <div class="stack-pill"><span style="font-size:22px">📄</span><div><h4>ReportLab</h4><p>Generación PDF</p></div></div>
+<!-- CONTACT -->
+<section class="section contact-section" id="contact">
+  <div class="si contact-inner rv">
+    <div class="s-label">Contacto</div>
+    <h2>¿Buscas a alguien que convierta problemas complejos en software real?</h2>
+    <p class="contact-p">Fluxio partió de una pregunta — ¿puedo construir esto? — y se convirtió en seis meses de física, 3D, estándares de ingeniería y código, estudiados y aplicados en paralelo. Esa capacidad de absorber un dominio nuevo y transformarlo en producto puede trabajar para tu equipo. El sistema completo está disponible en demostración en vivo.</p>
+    <div class="hero-btns" style="margin-bottom:0;justify-content:center">
+      <a class="btn-p" href="mailto:cayuqueo_94@hotmail.com">Escríbeme →</a>
+      <a class="btn-o" href="https://github.com/jacayuqueo" target="_blank" rel="noopener">Mi GitHub</a>
     </div>
   </div>
 </section>
@@ -703,20 +1173,21 @@ footer{background:var(--bg2);border-top:1px solid var(--line2);padding:56px 52px
   <div class="footer-top">
     <div class="foot-brand">
       <h3>⬡ Fluxio</h3>
-      <p>Software libre para diseñar redes de ductos HVAC en 3D, calcular pérdidas de presión con tablas ASHRAE e integrar modelos BIM — sin pagar licencias.</p>
+      <p>Desarrollo independiente, construido desde cero en seis meses: software para diseñar redes de ductos HVAC en 3D, calcular su física con tablas ASHRAE, optimizar dimensiones y generar la memoria de cálculo en LaTeX. Disponible en demostración.</p>
       <div class="foot-norms">
         <span class="fn-chip">ASHRAE Cap.18</span><span class="fn-chip">ASHRAE Cap.21</span>
         <span class="fn-chip">SMACNA</span><span class="fn-chip">ISO 16739</span>
-        <span class="fn-chip">ISO 10303</span><span class="fn-chip">MIT License</span>
+        <span class="fn-chip">ISO 10303</span><span class="fn-chip">openBIM</span>
+        <span class="fn-chip">LaTeX</span>
       </div>
     </div>
     <div class="foot-col">
       <h4>Proyecto</h4>
       <ul>
-        <li><a href="https://github.com/jacayuqueo/fluxio-landing">Repositorio</a></li>
-        <li><a href="https://github.com/jacayuqueo/fluxio-landing/releases">Releases</a></li>
-        <li><a href="https://github.com/jacayuqueo/fluxio-landing/issues">Issues</a></li>
-        <li><a href="https://github.com/jacayuqueo/fluxio-landing/blob/main/README.md">Docs</a></li>
+        <li><a href="#screenshots">El software</a></li>
+        <li><a href="#report">Informe de ejemplo</a></li>
+        <li><a href="report/Guia_tecnica_perdida_presion.pdf">Guía técnica (PDF)</a></li>
+        <li><a href="#contact">Solicitar una demo</a></li>
       </ul>
     </div>
     <div class="foot-col">
@@ -739,10 +1210,12 @@ footer{background:var(--bg2);border-top:1px solid var(--line2);padding:56px 52px
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Fluxio — MIT License</span>
+    <span>© 2026 Fluxio — Todos los derechos reservados</span>
     <span>Python · PyQt6 · PyVista · ASHRAE · SMACNA</span>
   </div>
 </footer>
+
+<div id="lightbox"><span class="lb-close">✕</span><img src="" alt=""><span class="lb-cap"></span></div>
 
 <script>
 /* Scroll reveal */
@@ -769,18 +1242,27 @@ function activateTab(i){
 document.querySelectorAll('.ss-tab').forEach(t=>t.addEventListener('click',()=>activateTab(+t.dataset.tab)));
 document.querySelectorAll('.ss-mini').forEach(m=>m.addEventListener('click',()=>activateTab(+m.dataset.select)));
 
+/* Hero window tabs */
+document.querySelectorAll('.hw-tab').forEach(t=>t.addEventListener('click',()=>{
+  const i=+t.dataset.hw;
+  document.querySelectorAll('.hw-tab').forEach((x,j)=>x.classList.toggle('active',j===i));
+  document.querySelectorAll('.hw-pane').forEach((x,j)=>x.classList.toggle('active',j===i));
+}));
+
 /* Typewriter */
 const lines=[
   {t:'python main_controlador.py',d:60,c:'t-c'},
-  {t:'[OK] Iniciando HVAC Duct Analyzer...',d:22,c:'t-g'},
+  {t:'[OK] Iniciando Fluxio — motor de cálculo HVAC...',d:22,c:'t-g'},
   {t:'[→] Abriendo proyecto: sala_electrica_norte.json',d:18,c:'t-w'},
   {t:'[OK] Red cargada — 12 fittings · 3 ramales · 1 equipo RTU',d:18,c:'t-g'},
   {t:'[→] Calculando caudales desde las rejillas hacia el HVAC...',d:16,c:'t-w'},
   {t:'[OK] Caudal total = 3,240 m³/h — coincide con Q_dis del equipo',d:16,c:'t-g'},
   {t:'[→] Buscando C₀ para Wye SR5-1B: Qb/Qc=0.38 · As/Ac=0.75 · Re=24800',d:14,c:'t-w'},
-  {t:'[OK] C₀=1.28 via interpolación 3D trilineal',d:18,c:'t-g'},
+  {t:'[OK] C₀=1.28 vía interpolación 3D trilineal',d:18,c:'t-g'},
   {t:'[→] Sección crítica: Tramo-07 · λ=0.0194 (Altshul) · ΔP=192 Pa',d:16,c:'t-a'},
+  {t:'[→] Optimizando ruta crítica — Equal Friction · W×H comerciales...',d:16,c:'t-w'},
   {t:'[OK] Sistema OK — Margen disponible: 28 Pa sobre ESP_dis del RTU ✓',d:16,c:'t-g'},
+  {t:'[OK] Memoria de cálculo LaTeX compilada → Reporte_FLX.pdf ✓',d:16,c:'t-g'},
 ];
 const body=document.getElementById('term-body');
 let li=0,ci=0;
@@ -795,6 +1277,24 @@ function typeNext(){
 }
 setTimeout(typeNext,800);
 
+/* Lightbox */
+const lb=document.getElementById('lightbox'),lbImg=lb.querySelector('img'),lbCap=lb.querySelector('.lb-cap');
+document.querySelectorAll('.ss-img img').forEach(im=>im.addEventListener('click',()=>{
+  if(!im.parentElement.classList.contains('loaded'))return;
+  lbImg.src=im.src;lbCap.textContent=im.alt;lb.classList.add('open');document.body.style.overflow='hidden';
+}));
+function lbClose(){lb.classList.remove('open');document.body.style.overflow=''}
+lb.addEventListener('click',lbClose);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')lbClose()});
+
+/* Progress + hero tilt */
+const pbar=document.getElementById('progress'),hwin=document.getElementById('heroWin');
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  pbar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+  if(hwin){const r=Math.max(0,1-h.scrollTop/420);hwin.style.transform=`perspective(1200px) rotateX(${(6*r).toFixed(2)}deg)`}
+},{passive:true});
+
 /* Nav highlight */
 const navAs=document.querySelectorAll('.nav-links a');
 const sects=[...document.querySelectorAll('section[id]')];
@@ -806,4 +1306,3 @@ window.addEventListener('scroll',()=>{
 </script>
 </body>
 </html>
-                                        
