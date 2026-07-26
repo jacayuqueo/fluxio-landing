@@ -18,7 +18,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 3h7a9 9 0 0 1 9 9v9' fill='none' stroke='%231a66ff' stroke-width='3.4' stroke-linecap='square'/%3E%3Cpath d='M5 9h5.5a4.5 4.5 0 0 1 4.5 4.5V21' fill='none' stroke='%230f1c30' stroke-width='3.4' stroke-linecap='square'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script>
 /* Tema: preferencia guardada > preferencia del sistema (antes del render, evita parpadeo) */
 (function(){var t=null;try{t=localStorage.getItem('flx-theme')}catch(e){}
@@ -215,6 +215,65 @@ footer{padding:52px 0;background:var(--fondo)}
   .foot-links{gap:36px}
   .cierre{padding:84px 0}
 }
+
+/* ═══ v5: capas, confianza, bento, reveals ═══ */
+.mono{font-family:'IBM Plex Mono',ui-monospace,monospace}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(var(--borde) 1px,transparent 1px),linear-gradient(90deg,var(--borde) 1px,transparent 1px);background-size:56px 56px;opacity:.5;mask-image:radial-gradient(ellipse 75% 65% at 50% 35%,#000 25%,transparent 90%);pointer-events:none}
+html[data-theme="dark"] .hero-grid-bg{opacity:.35}
+.hero-stage{position:relative;max-width:1000px;margin:64px auto 0}
+.hero-float{position:absolute;right:-26px;bottom:-34px;width:300px;border-radius:14px;overflow:hidden;border:1px solid var(--borde);box-shadow:var(--sombra);background:#0e1520;z-index:3}
+.hero-float img{width:100%;display:block}
+.hero-float span{position:absolute;top:10px;left:10px;font-size:11.5px;font-weight:700;color:#dbe6ff;background:rgba(26,102,255,.85);padding:5px 11px;border-radius:7px}
+.trust{border-top:1px solid var(--borde);border-bottom:1px solid var(--borde);background:var(--panel);padding:34px 0}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:center}
+.trust-item b{display:block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:30px;font-weight:600;letter-spacing:-.02em;color:var(--tinta);line-height:1.1}
+.trust-item span{font-size:13.5px;color:var(--texto);line-height:1.4;display:block;margin-top:4px}
+.trust-normas{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:26px}
+.norma{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11.5px;font-weight:500;color:var(--texto);border:1px solid var(--borde);background:var(--tarjeta);border-radius:7px;padding:6px 13px}
+.paso-mini{list-style:none;display:grid;gap:9px;margin-top:18px}
+.paso-mini li{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;color:var(--suave);line-height:1.5}
+.paso-mini .vs-ico{width:20px;height:20px;font-size:10.5px;background:var(--azul-suave);color:var(--azul);margin-top:1px}
+/* bento */
+.bento{background:var(--panel);border-top:1px solid var(--borde);border-bottom:1px solid var(--borde)}
+.bento-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.b-card{background:var(--tarjeta);border:1px solid var(--borde);border-radius:var(--radio);padding:28px;box-shadow:var(--sombra-min);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
+.b-card:hover{transform:translateY(-3px);box-shadow:var(--sombra)}
+.b-3{grid-column:span 3}.b-2{grid-column:span 2}.b-4{grid-column:span 4}.b-6{grid-column:span 6}
+.b-kicker{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--azul);margin-bottom:12px}
+.b-card h3{font-size:19px;font-weight:800;letter-spacing:-.015em;margin-bottom:9px}
+.b-card p{font-size:14.5px;color:var(--texto);line-height:1.6}
+.b-num{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:52px;font-weight:600;letter-spacing:-.03em;color:var(--azul);line-height:1;margin-bottom:8px}
+.b-dark{background:var(--cierre);border-color:#22344f}
+.b-dark .b-kicker{color:#7fa8ff}
+.b-dark h3{color:#fff}
+.b-dark p{color:#9fb0c9}
+.b-eq{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:clamp(15px,1.8vw,20px);color:#9fc3ff;background:rgba(83,144,255,.1);border:1px solid #2b4570;border-radius:10px;padding:16px 18px;margin:14px 0}
+.b-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}
+.b-tag{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:11px;color:var(--texto);border:1px solid var(--borde);border-radius:6px;padding:4px 10px;background:var(--panel)}
+.b-dark .b-tag{color:#9fb0c9;border-color:#2b3f5e;background:rgba(255,255,255,.04)}
+.b-shot{margin:16px -28px -28px;border-top:1px solid var(--borde)}
+.b-shot img{width:100%;display:block}
+.b-doc{position:absolute;right:22px;top:50%;transform:translateY(-50%) rotate(3deg);width:120px;border:1px solid #d8dde5;border-radius:5px;box-shadow:0 12px 28px -10px rgba(15,40,90,.3)}
+.bento-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:44px}
+/* informe embebido plegable */
+details.embed{margin-top:34px;border:1px solid var(--borde);border-radius:var(--radio);overflow:hidden;background:var(--tarjeta)}
+details.embed summary{list-style:none;cursor:pointer;padding:18px 24px;font-size:15.5px;font-weight:700;color:var(--azul);display:flex;align-items:center;gap:10px}
+details.embed summary::-webkit-details-marker{display:none}
+details.embed summary:hover{background:var(--panel)}
+details.embed .flecha{transition:transform .2s;font-size:13px}
+details.embed[open] .flecha{transform:rotate(90deg)}
+.pdf-frame{display:block;width:100%;height:620px;border:none;background:#0e1520}
+/* reveals */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.rv.vis{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.rv{opacity:1;transform:none;transition:none}}
+@media(max-width:960px){
+  .hero-float{display:none}
+  .trust-grid{grid-template-columns:1fr 1fr;gap:22px}
+  .b-3,.b-2,.b-4,.b-6{grid-column:span 6}
+  .b-doc{display:none}
+  .pdf-frame{height:420px}
+}
 </style>
 </head>
 <body>
@@ -226,7 +285,7 @@ footer{padding:52px 0;background:var(--fondo)}
     </a>
     <nav class="nav-links">
       <a href="#como">Cómo funciona</a>
-      <a href="#antes">Antes y después</a>
+      <a href="#ingenieria">La ingeniería</a>
       <a href="#informe">El informe</a>
       <a href="tecnico.html">Ficha técnica</a>
       <a class="nav-cta" href="mailto:cayuqueo_94@hotmail.com">Escríbeme</a>
@@ -240,11 +299,12 @@ footer{padding:52px 0;background:var(--fondo)}
 
 <!-- ══ HERO ══ -->
 <section class="hero">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="wrap">
     <span class="chip">Software de ingeniería — proyecto personal</span>
     <h1>Diseñar la climatización de un edificio <em>ya no toma semanas</em>.</h1>
-    <p class="sub">Con Fluxio la red de aire se dibuja en 3D sobre el edificio real: el programa hace los cálculos solo, mientras dibujas, y entrega el informe de ingeniería listo para presentar. Con un clic.</p>
+    <p class="sub">Tan simple que cualquiera lo entiende: la red de aire se dibuja en 3D y <strong>Fluxio calcula solo</strong>. Tan riguroso que el resultado es un informe de ingeniería listo para presentar — con un clic.</p>
     <div class="hero-btns">
       <a class="btn btn-azul" href="#como">Ver cómo funciona ↓</a>
       <a class="btn btn-borde" href="report/Reporte_FLX-20260705.pdf" target="_blank" rel="noopener">Ver el informe que genera</a>
@@ -257,16 +317,39 @@ footer{padding:52px 0;background:var(--fondo)}
          <div class="shot"><video autoplay muted loop playsinline poster="screenshots/mapa_presion.png"
               style="width:100%;display:block"><source src="video/fluxio_loop.mp4" type="video/mp4"></video></div>
     ····································································································· -->
-    <figure class="hero-shot">
+    <figure class="hero-stage">
       <div class="shot">
         <!-- FLX-IMG: captura principal reemplazable -->
         <img class="zoomable" src="screenshots/ui_completa.png" alt="Fluxio con un análisis de climatización terminado" onerror="this.style.display='none'">
         <span class="shot-nota">▶ Video demo — en producción</span>
       </div>
-      <figcaption class="pie">Fluxio en acción: la red calculada y el mapa de colores que muestra dónde el aire pierde fuerza.</figcaption>
+      <div class="hero-float" aria-hidden="true">
+        <img src="screenshots/mapa_mini.png" alt="" onerror="this.parentElement.style.display='none'">
+        <span>Cálculo en tiempo real</span>
+      </div>
+      <figcaption class="pie" style="margin-top:52px">Fluxio en acción: la red calculada y el mapa de colores que muestra dónde el aire pierde fuerza.</figcaption>
     </figure>
   </div>
 </section>
+
+<!-- ══ CONFIANZA ══ -->
+<div class="trust">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div class="trust-item"><b>6 meses</b><span>de desarrollo — una sola persona, desde cero</span></div>
+      <div class="trust-item"><b>2</b><span>proyectos reales de ingeniería ya entregados</span></div>
+      <div class="trust-item"><b>27 págs.</b><span>de informe generadas con un solo clic</span></div>
+      <div class="trust-item"><b>15.000</b><span>piezas tiene el edificio real donde se probó</span></div>
+    </div>
+    <div class="trust-normas">
+      <span class="norma">Basado en ASHRAE</span>
+      <span class="norma">SMACNA</span>
+      <span class="norma">ISO 16739 — openBIM</span>
+      <span class="norma">ISO 10303 — STEP</span>
+      <span class="norma">Informes LaTeX</span>
+    </div>
+  </div>
+</div>
 
 <!-- ══ ANTES / DESPUÉS ══ -->
 <section class="sec vs" id="antes">
@@ -313,6 +396,11 @@ footer{padding:52px 0;background:var(--fondo)}
         <div class="paso-num">1</div>
         <h3>Dibujas la red en 3D</h3>
         <p>Los ductos se arman pieza por pieza — codos, uniones, rejillas — directamente sobre el modelo del edificio real. Cada pieza sale de un catálogo normado: nada queda al ojo.</p>
+        <ul class="paso-mini">
+          <li><span class="vs-ico">＋</span> Abre los planos BIM reales del edificio (IFC / STEP)</li>
+          <li><span class="vs-ico">＋</span> Biblioteca completa de piezas según el estándar ASHRAE</li>
+          <li><span class="vs-ico">＋</span> Las dimensiones se heredan solas entre piezas conectadas</li>
+        </ul>
       </div>
       <figure class="paso-fig">
         <div class="shot">
@@ -327,6 +415,11 @@ footer{padding:52px 0;background:var(--fondo)}
         <div class="paso-num">2</div>
         <h3>Fluxio calcula solo</h3>
         <p>Mientras dibujas, el programa resuelve la física del aire en tiempo real y colorea la red: azul donde el aire viaja bien, rojo donde pierde fuerza. Como un escáner del edificio — los problemas se ven antes de construir.</p>
+        <ul class="paso-mini">
+          <li><span class="vs-ico">＋</span> Física real del manual ASHRAE, no factores genéricos</li>
+          <li><span class="vs-ico">＋</span> Detecta la ruta crítica y los choques con la estructura</li>
+          <li><span class="vs-ico">＋</span> Optimiza las dimensiones con tres métodos automáticos</li>
+        </ul>
       </div>
       <figure class="paso-fig">
         <div class="shot">
@@ -341,6 +434,11 @@ footer{padding:52px 0;background:var(--fondo)}
         <div class="paso-num">3</div>
         <h3>Te llevas el informe</h3>
         <p>Un clic, y sale el documento de ingeniería completo: 27 páginas con planos, tablas y toda la justificación del cálculo, listas para presentar a un cliente o a un revisor. Nada de copiar resultados a mano.</p>
+        <ul class="paso-mini">
+          <li><span class="vs-ico">＋</span> Compuesto y compilado en LaTeX, calidad editorial</li>
+          <li><span class="vs-ico">＋</span> Con metodología y referencia a la norma en cada número</li>
+          <li><span class="vs-ico">＋</span> Además exporta la red a IFC (openBIM) y planos CAD (DXF)</li>
+        </ul>
       </div>
       <figure class="paso-fig">
         <div class="shot" style="background:var(--panel)">
@@ -388,6 +486,54 @@ footer{padding:52px 0;background:var(--fondo)}
   </div>
 </section>
 
+<!-- ══ LA INGENIERÍA DEBAJO (bento) ══ -->
+<section class="sec bento" id="ingenieria">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Debajo del capó hay ingeniería de verdad.</h2>
+      <p class="sub">Que sea fácil de usar no significa que sea liviano: cada número que Fluxio entrega tiene una norma y una ecuación detrás.</p>
+    </div>
+    <div class="bento-grid">
+      <div class="b-card b-dark b-3 rv">
+        <div class="b-kicker">Motor de cálculo</div>
+        <h3>La física real, resuelta en vivo</h3>
+        <div class="b-eq">ΔP<sub>f</sub> = f · (L/D<sub>h</sub>) · ρV²/2</div>
+        <p>Darcy–Weisbach, Colebrook y Altshul — las ecuaciones del ASHRAE Handbook — se resuelven en tiempo real para cada tramo de la red mientras dibujas. Sin factores de seguridad inventados.</p>
+        <div class="b-tags"><span class="b-tag">Bernoulli</span><span class="b-tag">Reynolds</span><span class="b-tag">Presión dinámica</span><span class="b-tag">Ruta crítica</span></div>
+      </div>
+      <div class="b-card b-3 rv">
+        <div class="b-kicker">Base de datos normada</div>
+        <div class="b-num">36</div>
+        <h3>Tablas ASHRAE digitalizadas a mano</h3>
+        <p>Cada accesorio — codos, uniones TEE, transiciones, dampers — obtiene su coeficiente real interpolando las tablas oficiales del ASHRAE Duct Fitting Database, en 1, 2 y hasta 3 dimensiones.</p>
+        <div class="b-tags"><span class="b-tag">CR3-1</span><span class="b-tag">SR5-13</span><span class="b-tag">SR7-17</span><span class="b-tag">SR2-3 · 3D</span><span class="b-tag">+32 más</span></div>
+      </div>
+      <div class="b-card b-2 rv">
+        <div class="b-kicker">Edificios reales</div>
+        <div class="b-num">15.000</div>
+        <h3>Elementos BIM en escena</h3>
+        <p>Abre los formatos con que la industria proyecta (IFC / STEP), filtra en vivo y detecta choques entre ductos y estructura.</p>
+      </div>
+      <div class="b-card b-2 rv">
+        <div class="b-kicker">Optimización</div>
+        <div class="b-num">3</div>
+        <h3>Métodos automáticos</h3>
+        <p>Por elemento, por ruta crítica y dimensionamiento Equal Friction — el programa propone las medidas óptimas por ti.</p>
+      </div>
+      <div class="b-card b-2 rv">
+        <div class="b-kicker">Documentos</div>
+        <div class="b-num">27</div>
+        <h3>Páginas compiladas en LaTeX</h3>
+        <p>La memoria de cálculo se compone y compila sola, con portada, planos, tablas y metodología — y exporta a IFC y DXF.</p>
+      </div>
+    </div>
+    <div class="bento-cta rv">
+      <a class="btn btn-azul" href="tecnico.html">Ver la ficha técnica completa →</a>
+      <a class="btn btn-borde" href="report/Guia_tecnica_perdida_presion.pdf" target="_blank" rel="noopener">Guía teórica (PDF)</a>
+    </div>
+  </div>
+</section>
+
 <!-- ══ EL INFORME ══ -->
 <section class="sec" id="informe">
   <div class="wrap">
@@ -413,6 +559,10 @@ footer{padding:52px 0;background:var(--fondo)}
         <p class="ficha-link">¿Eres del rubro? Las normas, ecuaciones y la arquitectura del sistema están en la <a href="tecnico.html">Ficha técnica</a>.</p>
       </div>
     </div>
+    <details class="embed rv">
+      <summary><span class="flecha">▶</span> Ver el informe completo aquí mismo, sin descargar nada</summary>
+      <iframe class="pdf-frame" src="report/Reporte_FLX-20260705.pdf#view=FitH" title="Informe de ingeniería emitido por Fluxio" loading="lazy"></iframe>
+    </details>
   </div>
 </section>
 
@@ -493,6 +643,20 @@ document.getElementById('themeBtn').addEventListener('click',function(){
   h.setAttribute('data-theme',t);
   try{localStorage.setItem('flx-theme',t)}catch(e){}
 });
+/* Aparición suave al hacer scroll */
+(function(){
+  if(!('IntersectionObserver' in window))return;
+  var ro=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');ro.unobserve(e.target)}});
+  },{threshold:.12});
+  document.querySelectorAll('.vs-card,.paso,.b-card,.bento-cta,.informe-grid,.embed,.trust-grid').forEach(function(el){
+    el.classList.add('rv');ro.observe(el);
+  });
+  /* Seguro: nada queda invisible aunque el observador falle */
+  setTimeout(function(){
+    document.querySelectorAll('.rv:not(.vis)').forEach(function(el){el.classList.add('vis')});
+  },1200);
+})();
 </script>
 </body>
 </html>
