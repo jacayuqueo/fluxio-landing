@@ -220,9 +220,11 @@ footer{padding:52px 0;background:var(--fondo)}
 .hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(var(--borde) 1px,transparent 1px),linear-gradient(90deg,var(--borde) 1px,transparent 1px);background-size:56px 56px;opacity:.5;mask-image:radial-gradient(ellipse 75% 65% at 50% 35%,#000 25%,transparent 90%);pointer-events:none}
 html[data-theme="dark"] .hero-grid-bg{opacity:.35}
 .hero-stage{position:relative;max-width:1000px;margin:64px auto 0}
-.hero-float{position:absolute;right:-26px;bottom:-34px;width:300px;border-radius:14px;overflow:hidden;border:1px solid var(--borde);box-shadow:var(--sombra);background:#0e1520;z-index:3}
+.hero-float{position:absolute;right:-18px;bottom:-30px;width:280px;border-radius:14px;overflow:hidden;border:1px solid var(--borde);box-shadow:var(--sombra);background:#0e1520;z-index:3}
 .hero-float img{width:100%;display:block}
 .hero-float span{position:absolute;top:10px;left:10px;font-size:11.5px;font-weight:700;color:#dbe6ff;background:rgba(26,102,255,.85);padding:5px 11px;border-radius:7px}
+.hero-stage .pie{text-align:left;max-width:600px;margin-left:2px}
+@media(max-width:960px){.hero-stage .pie{text-align:center;max-width:none;margin-left:0;margin-top:16px !important}}
 .trust{border-top:1px solid var(--borde);border-bottom:1px solid var(--borde);background:var(--panel);padding:34px 0}
 .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:center}
 .trust-item b{display:block;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:30px;font-weight:600;letter-spacing:-.02em;color:var(--tinta);line-height:1.1}
