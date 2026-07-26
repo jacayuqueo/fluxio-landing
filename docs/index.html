@@ -308,6 +308,17 @@ details.embed[open] .flecha{transform:rotate(90deg)}
   .puerta-fig img{left:24px;top:22px;width:105%}
   .puerta-txt{padding:30px 26px}
 }
+
+/* ═══ cierre: firma, estatus y CTA intermedio ═══ */
+.cta-mini{text-align:center;margin-top:52px}
+.cta-mini p{font-size:15.5px;color:var(--texto);margin-bottom:16px}
+.estatus{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:880px;margin:36px auto 40px;text-align:left}
+.est{background:rgba(255,255,255,.05);border:1px solid #24354f;border-radius:12px;padding:18px 20px}
+.est i{font-family:'IBM Plex Mono',ui-monospace,monospace;font-style:normal;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#7fa8ff;display:block;margin-bottom:7px}
+.est p{font-size:13.5px;color:#aab8cf;line-height:1.55;margin:0;max-width:none}
+.firma{margin-top:34px;font-size:16px;color:#eef2f8;font-weight:700}
+.firma span{display:block;font-size:13.5px;color:#8fa3c0;font-weight:500;margin-top:3px}
+@media(max-width:960px){.estatus{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -322,7 +333,7 @@ details.embed[open] .flecha{transform:rotate(90deg)}
       <a href="#ingenieria">La ingeniería</a>
       <a href="#informe">El informe</a>
       <a class="nav-ficha" href="tecnico.html" target="_blank" rel="noopener">Ficha técnica <span class="fx">↗</span></a>
-      <a class="nav-cta" href="mailto:cayuqueo_94@hotmail.com">Escríbeme</a>
+      <a class="nav-cta" href="mailto:julio.cayuqueo@usach.cl">Escríbeme</a>
       <button class="theme-btn" id="themeBtn" type="button" aria-label="Cambiar entre tema claro y oscuro" title="Tema claro / oscuro">
         <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
         <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>
@@ -520,6 +531,10 @@ details.embed[open] .flecha{transform:rotate(90deg)}
         </div>
       </div>
     </figure>
+    <div class="cta-mini">
+      <p>¿Quieres verlo funcionando en vivo?</p>
+      <a class="btn btn-borde" href="mailto:julio.cayuqueo@usach.cl">Escríbeme y lo coordinamos →</a>
+    </div>
   </div>
 </section>
 
@@ -618,11 +633,18 @@ details.embed[open] .flecha{transform:rotate(90deg)}
   <div class="wrap">
     <span class="chip">Quién está detrás</span>
     <h2>Esto no lo hizo una empresa. Lo hice yo.</h2>
-    <p>Soy ingeniero mecánico. Fluxio partió de una pregunta: <strong>¿puedo construir esto?</strong> Seis meses de física, 3D, normas y código después, la respuesta ya trabaja en dos proyectos de ingeniería. Si buscas a alguien que convierta problemas complejos en herramientas útiles, hablemos.</p>
-    <div class="btn-row">
-      <a class="btn btn-azul" href="mailto:cayuqueo_94@hotmail.com">Escríbeme →</a>
-      <a class="btn btn-borde" href="https://github.com/jacayuqueo" target="_blank" rel="noopener">Mi GitHub</a>
+    <p>Soy ingeniero mecánico. Fluxio partió de una pregunta: <strong>¿puedo construir esto?</strong> Seis meses de física, 3D, normas y código después, la respuesta ya trabaja en dos proyectos de ingeniería y tiene usuarios activos. Si buscas a alguien que convierta problemas complejos en herramientas útiles, hablemos.</p>
+    <div class="estatus">
+      <div class="est"><i>Qué es</i><p>Software de escritorio de desarrollo propio, en uso en proyectos reales de ingeniería.</p></div>
+      <div class="est"><i>Cómo verlo</i><p>Demostración en vivo del sistema completo, del modelo 3D al informe.</p></div>
+      <div class="est"><i>Cómo coordinar</i><p>Un correo basta: respondo y agendamos.</p></div>
     </div>
+    <div class="btn-row">
+      <a class="btn btn-azul" href="mailto:julio.cayuqueo@usach.cl">Escríbeme →</a>
+      <a class="btn btn-borde" href="https://github.com/jacayuqueo" target="_blank" rel="noopener">Mi GitHub</a>
+      <a class="btn btn-borde" href="https://www.linkedin.com/in/julio-%C3%A1lvaro-cayuqueo-cayul-657991189/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <p class="firma">Álvaro Cayuqueo<span>Ingeniero de Ejecución en Mecánica · creador de Fluxio</span></p>
   </div>
 </section>
 
@@ -657,7 +679,8 @@ details.embed[open] .flecha{transform:rotate(90deg)}
         <div class="foot-col">
           <h4>Contacto</h4>
           <ul>
-            <li><a href="mailto:cayuqueo_94@hotmail.com">Escríbeme</a></li>
+            <li><a href="mailto:julio.cayuqueo@usach.cl">Escríbeme</a></li>
+            <li><a href="https://www.linkedin.com/in/julio-%C3%A1lvaro-cayuqueo-cayul-657991189/" target="_blank" rel="noopener">LinkedIn</a></li>
             <li><a href="https://github.com/jacayuqueo" target="_blank" rel="noopener">GitHub</a></li>
           </ul>
         </div>
