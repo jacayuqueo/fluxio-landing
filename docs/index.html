@@ -202,7 +202,6 @@ footer{padding:52px 0;background:var(--fondo)}
 
 /* ── Responsive ── */
 @media(max-width:960px){
-  .nav-links>a:not(.nav-cta){display:none}
   .sec{padding:74px 0}
   .hero{padding:64px 0 64px}
   .vs-grid,.paso,.informe-grid{grid-template-columns:1fr}
@@ -274,6 +273,36 @@ details.embed[open] .flecha{transform:rotate(90deg)}
   .b-doc{display:none}
   .pdf-frame{height:420px}
 }
+
+/* ═══ acceso a la ficha técnica ═══ */
+.nav-ficha{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--azul-borde);color:var(--azul) !important;font-weight:700;font-size:14.5px;padding:8px 16px;border-radius:10px;background:var(--azul-suave);transition:background .15s,border-color .15s}
+.nav-ficha:hover{border-color:var(--azul);background:var(--azul-suave);text-decoration:none}
+.nav-ficha .fx{font-size:12px}
+.menu-btn{display:none;width:38px;height:38px;border:1px solid var(--borde);border-radius:10px;background:transparent;color:var(--texto);align-items:center;justify-content:center;cursor:pointer}
+.menu-btn svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+.puerta{display:grid;grid-template-columns:1.15fr 1fr;gap:0;margin-top:52px;background:var(--tarjeta);border:1px solid var(--borde);border-radius:var(--radio);box-shadow:var(--sombra);overflow:hidden}
+.puerta-txt{padding:44px 46px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.puerta-txt .b-kicker{margin-bottom:10px}
+.puerta-txt h3{font-size:clamp(21px,2.4vw,27px);font-weight:800;letter-spacing:-.02em;margin-bottom:12px}
+.puerta-txt p{font-size:15.5px;color:var(--texto);line-height:1.65;margin-bottom:26px}
+.puerta-fig{position:relative;background:var(--panel);border-left:1px solid var(--borde);overflow:hidden;min-height:280px}
+.puerta-fig img{position:absolute;top:26px;left:30px;width:112%;border-radius:8px 0 0 0;border:1px solid var(--borde);box-shadow:0 18px 44px -14px rgba(15,40,90,.28)}
+.puerta-fig::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,var(--panel) 100%)}
+.puerta-btns{display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:960px){
+  .menu-btn{display:flex}
+  .nav-links{position:absolute;top:70px;left:0;right:0;background:var(--fondo);border-bottom:1px solid var(--borde);flex-direction:column;align-items:stretch;gap:0;padding:10px 24px 18px;display:none;box-shadow:var(--sombra-min)}
+  .nav-links.abierto{display:flex}
+  .nav-links>a{display:block;padding:13px 4px;font-size:16px;border-bottom:1px solid var(--borde)}
+  .nav-links>a:last-of-type{border-bottom:none}
+  .nav-links .nav-ficha{margin:10px 0 6px;justify-content:center}
+  .nav-links .nav-cta{text-align:center;margin-top:4px}
+  .nav-links .theme-btn{align-self:flex-end;margin-top:8px}
+  .puerta{grid-template-columns:1fr}
+  .puerta-fig{min-height:220px;border-left:none;border-top:1px solid var(--borde)}
+  .puerta-fig img{left:24px;top:22px;width:105%}
+  .puerta-txt{padding:30px 26px}
+}
 </style>
 </head>
 <body>
@@ -287,13 +316,16 @@ details.embed[open] .flecha{transform:rotate(90deg)}
       <a href="#como">Cómo funciona</a>
       <a href="#ingenieria">La ingeniería</a>
       <a href="#informe">El informe</a>
-      <a href="tecnico.html">Ficha técnica</a>
+      <a class="nav-ficha" href="tecnico.html" target="_blank" rel="noopener">Ficha técnica <span class="fx">↗</span></a>
       <a class="nav-cta" href="mailto:cayuqueo_94@hotmail.com">Escríbeme</a>
       <button class="theme-btn" id="themeBtn" type="button" aria-label="Cambiar entre tema claro y oscuro" title="Tema claro / oscuro">
         <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
         <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>
       </button>
     </nav>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menú" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
   </div>
 </header>
 
@@ -527,9 +559,19 @@ details.embed[open] .flecha{transform:rotate(90deg)}
         <p>La memoria de cálculo se compone y compila sola, con portada, planos, tablas y metodología. Además, la red se exporta a IFC y DXF.</p>
       </div>
     </div>
-    <div class="bento-cta rv">
-      <a class="btn btn-azul" href="tecnico.html">Ver la ficha técnica completa →</a>
-      <a class="btn btn-borde" href="report/Guia_tecnica_perdida_presion.pdf" target="_blank" rel="noopener">Guía técnica (PDF)</a>
+    <div class="puerta rv">
+      <div class="puerta-txt">
+        <div class="b-kicker">La página para ingenieros</div>
+        <h3>Todo el detalle vive en su propia página.</h3>
+        <p>Arquitectura del sistema, motor de cálculo, las 36 tablas ASHRAE, el catálogo funcional completo y la metodología. Se abre en una pestaña aparte, para mirar con calma.</p>
+        <div class="puerta-btns">
+          <a class="btn btn-azul" href="tecnico.html" target="_blank" rel="noopener">Abrir la ficha técnica ↗</a>
+          <a class="btn btn-borde" href="report/Guia_tecnica_perdida_presion.pdf" target="_blank" rel="noopener">Guía técnica (PDF)</a>
+        </div>
+      </div>
+      <div class="puerta-fig" aria-hidden="true">
+        <img src="screenshots/ficha_preview.png" alt="" onerror="this.parentElement.style.display='none'">
+      </div>
     </div>
   </div>
 </section>
@@ -556,7 +598,7 @@ details.embed[open] .flecha{transform:rotate(90deg)}
           <a class="btn btn-azul" href="report/Reporte_FLX-20260705.pdf" target="_blank" rel="noopener">Abrir el informe (PDF)</a>
           <a class="btn btn-borde" href="report/Reporte_FLX-20260705.pdf" download>Descargar PDF</a>
         </div>
-        <p class="ficha-link">¿Eres del rubro? Las normas, ecuaciones y la arquitectura del sistema están en la <a href="tecnico.html">Ficha técnica</a>.</p>
+        <p class="ficha-link">¿Eres del rubro? Las normas, ecuaciones y la arquitectura del sistema están en la <a href="tecnico.html" target="_blank" rel="noopener">Ficha técnica</a>.</p>
       </div>
     </div>
     <details class="embed rv">
@@ -604,7 +646,7 @@ details.embed[open] .flecha{transform:rotate(90deg)}
           <ul>
             <li><a href="report/Reporte_FLX-20260705.pdf">Informe de ejemplo</a></li>
             <li><a href="report/Guia_tecnica_perdida_presion.pdf">Guía técnica</a></li>
-            <li><a href="tecnico.html">Ficha técnica</a></li>
+            <li><a href="tecnico.html" target="_blank" rel="noopener">Ficha técnica</a></li>
           </ul>
         </div>
         <div class="foot-col">
@@ -643,6 +685,19 @@ document.getElementById('themeBtn').addEventListener('click',function(){
   h.setAttribute('data-theme',t);
   try{localStorage.setItem('flx-theme',t)}catch(e){}
 });
+/* Menú móvil */
+(function(){
+  var btn=document.getElementById('menuBtn'),links=document.querySelector('.nav-links');
+  if(!btn||!links)return;
+  btn.addEventListener('click',function(){
+    var abierto=links.classList.toggle('abierto');
+    btn.setAttribute('aria-expanded',abierto?'true':'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){links.classList.remove('abierto');btn.setAttribute('aria-expanded','false')});
+  });
+})();
+
 /* Aparición suave al hacer scroll */
 (function(){
   if(!('IntersectionObserver' in window))return;
