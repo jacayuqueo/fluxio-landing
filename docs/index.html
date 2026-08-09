@@ -330,6 +330,7 @@ details.embed[open] .flecha{transform:rotate(90deg)}
     </a>
     <nav class="nav-links">
       <a href="#como">Cómo funciona</a>
+      <a href="#optimizador">Optimizador</a>
       <a href="#ingenieria">La ingeniería</a>
       <a href="#informe">El informe</a>
       <a class="nav-ficha" href="tecnico.html" target="_blank" rel="noopener">Ficha técnica <span class="fx">↗</span></a>
@@ -499,6 +500,44 @@ details.embed[open] .flecha{transform:rotate(90deg)}
   </div>
 </section>
 
+<!-- ══ OPTIMIZADOR DE MÍNIMA INTERVENCIÓN ══ -->
+<section class="sec bento" id="optimizador">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Cuando algo no cumple, Fluxio no rediseña todo.</h2>
+      <p class="sub">Corrige lo mínimo necesario: un asistente que prueba miles de combinaciones y elige la que menos toca tu diseño original.</p>
+    </div>
+    <div class="bento-grid">
+      <div class="b-card b-2 rv">
+        <div class="b-kicker">Fase 1</div>
+        <h3>Eliges la pieza problemática</h3>
+        <p>Seleccionas el accesorio —una T, un codo, una transición— que más presión le está costando al sistema.</p>
+      </div>
+      <div class="b-card b-2 rv">
+        <div class="b-kicker">Fase 2</div>
+        <h3>Fluxio prueba miles de tamaños</h3>
+        <p>En segundos recorre cientos de combinaciones válidas según las tablas oficiales ASHRAE, calculando la pérdida de cada una.</p>
+      </div>
+      <div class="b-card b-2 rv">
+        <div class="b-kicker">Fase 3</div>
+        <h3>Aplica el cambio mínimo que funciona</h3>
+        <p>De las opciones que sí resuelven el problema, elige la que menos modifica tu diseño: la corrección más simple posible, no un rediseño completo.</p>
+      </div>
+    </div>
+    <div class="puerta rv" style="margin-top:32px">
+      <div class="puerta-txt">
+        <div class="b-kicker">En la práctica</div>
+        <h3>Así se ve mientras trabaja.</h3>
+        <p>El asistente muestra en vivo cuántas combinaciones cumplen el objetivo y qué tanto se aleja cada una del diseño original. Tú revisas y aplicas con un clic.</p>
+      </div>
+      <div class="puerta-fig" aria-hidden="true">
+        <!-- FLX-IMG: captura reemplazable -->
+        <img src="screenshots/optimizador_asistente.png" alt="Asistente de optimización de fittings de Fluxio" onerror="this.parentElement.style.display='none'">
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══ LA INGENIERÍA DEBAJO (bento) ══ -->
 <section class="sec bento" id="ingenieria">
   <div class="wrap">
@@ -538,6 +577,25 @@ details.embed[open] .flecha{transform:rotate(90deg)}
         <div class="b-num">27</div>
         <h3>Páginas compiladas en LaTeX</h3>
         <p>La memoria de cálculo se compone y compila sola, con portada, planos, tablas y metodología. Además, la red se exporta a IFC y DXF.</p>
+      </div>
+      <div class="b-card b-6 rv">
+        <div class="b-kicker">Diagnóstico</div>
+        <h3>Ruta crítica y presión del equipo, de un vistazo</h3>
+        <p>Cada corrida entrega el TESP que debe vencer el ventilador, la ruta más restrictiva de inyección y de retorno, y el detalle de pérdida por sección — para decidir dónde intervenir primero.</p>
+        <div class="b-shot">
+          <!-- FLX-IMG: captura reemplazable -->
+          <img class="zoomable" src="screenshots/resultados_analisis.png" alt="Resultados del análisis: ruta crítica y TESP en Fluxio" onerror="this.parentElement.style.display='none'">
+        </div>
+      </div>
+      <div class="b-card b-6 rv">
+        <div class="b-kicker">En proyectos reales</div>
+        <h3>Probado sobre modelos BIM de edificios reales</h3>
+        <p>La red se dibuja directamente sobre el modelo IFC/STEP del edificio: el ducto vive en el mismo espacio que la estructura, la sala eléctrica y el resto de las disciplinas, no en un plano aislado.</p>
+        <div class="b-shot" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--borde)">
+          <!-- FLX-IMG: capturas reemplazables -->
+          <img class="zoomable" src="screenshots/modelo_ifc_ducto.png" alt="Red de ductos diseñada sobre el modelo IFC de un edificio real" onerror="this.style.display='none'">
+          <img class="zoomable" src="screenshots/modelo_sala_electrica.png" alt="Modelo 3D de referencia de una sala eléctrica cargado en Fluxio" onerror="this.style.display='none'">
+        </div>
       </div>
     </div>
     <div class="puerta rv">
