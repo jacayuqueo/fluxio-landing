@@ -4,7 +4,7 @@
   ──────────────────────────────────────────
   · Página principal para público general: vende el producto, cierra con el autor.
   · Archivo único; assets relativos: screenshots/*.png · report/*.pdf · tecnico.html
-  · Buscar "FLX-VIDEO" para los slots del video demo, "FLX-IMG" para capturas reemplazables.
+  · Buscar "FLX-IMG" para capturas reemplazables.
 -->
 <html lang="es">
 <head>
@@ -157,13 +157,6 @@ h2{font-size:clamp(28px,3.6vw,42px);line-height:1.12;font-weight:800;letter-spac
 .paso-num{width:52px;height:52px;border-radius:14px;background:var(--azul-suave);color:var(--azul);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;margin-bottom:20px}
 .paso-txt h3{font-size:clamp(23px,2.4vw,29px);font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
 .paso-txt p{font-size:17.5px;color:var(--texto);line-height:1.65}
-
-/* ── Video ── */
-.video-slot{position:relative;aspect-ratio:16/9;background:#0e1520}
-.video-slot img{width:100%;height:100%;object-fit:cover;opacity:.9}
-.play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:84px;height:84px;border-radius:50%;background:var(--azul);box-shadow:0 12px 40px -8px rgba(26,102,255,.6);display:flex;align-items:center;justify-content:center;transition:transform .2s}
-.shot:hover .play{transform:translate(-50%,-50%) scale(1.06)}
-.play::after{content:'';display:block;width:0;height:0;border-style:solid;border-width:13px 0 13px 22px;border-color:transparent transparent transparent #fff;margin-left:6px}
 
 /* ── Informe ── */
 .informe-grid{display:grid;grid-template-columns:5fr 6fr;gap:70px;align-items:center;max-width:1020px;margin:0 auto}
@@ -353,19 +346,13 @@ details.embed[open] .flecha{transform:rotate(90deg)}
   <div class="wrap">
     <span class="chip">Software de ingeniería · Proyecto personal</span>
     <h1>Diseñar la climatización de un edificio <em>ya no tarda semanas</em>.</h1>
-    <p class="sub">Tan simple que cualquiera lo entiende: la red de aire se dibuja en 3D y <strong>Fluxio calcula solo</strong>. Tan riguroso que el resultado es un informe de ingeniería listo para presentar, con un clic.</p>
+    <p class="sub">La red de aire se dibuja en 3D y <strong>Fluxio calcula solo</strong>, con la misma física que usaría un ingeniero a mano. El resultado es un informe de ingeniería listo para presentar con un clic.</p>
     <div class="hero-btns">
       <a class="btn btn-azul" href="#como">Ver cómo funciona ↓</a>
       <a class="btn btn-borde" href="report/Reporte_FLX-20260705.pdf" target="_blank" rel="noopener">Ver el informe que genera</a>
     </div>
     <p class="hero-proof">En uso en minería: dos proyectos de ingeniería entregados</p>
 
-    <!-- FLX-VIDEO-HERO ······································································
-         Cuando exista el loop corto sin audio (20–30 s), reemplazar el <div class="shot">…</div> por:
-
-         <div class="shot"><video autoplay muted loop playsinline poster="screenshots/mapa_presion.png"
-              style="width:100%;display:block"><source src="video/fluxio_loop.mp4" type="video/mp4"></video></div>
-    ····································································································· -->
     <figure class="hero-stage">
       <div class="shot">
         <!-- FLX-IMG: captura principal reemplazable -->
@@ -415,7 +402,7 @@ details.embed[open] .flecha{transform:rotate(90deg)}
       </div>
       <div class="vs-card gana">
         <span class="vs-tag">Con Fluxio</span>
-        <h3>Dibujar. Y listo.</h3>
+        <h3>Dibujas, y Fluxio hace el resto.</h3>
         <ul class="vs-list">
           <li><span class="vs-ico">✓</span> Dibujas la red en 3D sobre el modelo del edificio real</li>
           <li><span class="vs-ico">✓</span> Los cálculos se resuelven solos mientras dibujas</li>
@@ -458,7 +445,7 @@ details.embed[open] .flecha{transform:rotate(90deg)}
       <div class="paso-txt">
         <div class="paso-num">2</div>
         <h3>Fluxio calcula solo</h3>
-        <p>Mientras dibujas, el programa resuelve la física del aire en tiempo real y colorea la red: azul donde el aire viaja bien, rojo donde pierde fuerza. Como un escáner del edificio: los problemas se ven antes de construir.</p>
+        <p>Mientras dibujas, el programa resuelve la física del aire en tiempo real y colorea la red: azul donde el aire viaja bien, rojo donde pierde fuerza. Así detectas un problema en la pantalla, no en la obra.</p>
         <ul class="paso-mini">
           <li><span class="vs-ico">＋</span> La física del manual ASHRAE, no factores genéricos</li>
           <li><span class="vs-ico">＋</span> Detecta la ruta crítica y los choques con la estructura</li>
@@ -499,14 +486,14 @@ details.embed[open] .flecha{transform:rotate(90deg)}
 <section class="sec bento" id="optimizador">
   <div class="wrap">
     <div class="sec-head">
-      <h2>Cuando algo no cumple, Fluxio no rediseña todo.</h2>
-      <p class="sub">Corrige lo mínimo necesario: un asistente que prueba miles de combinaciones y elige la que menos toca tu diseño original.</p>
+      <h2>Cuando algo no cumple, Fluxio te muestra el límite real.</h2>
+      <p class="sub">Un asistente que prueba miles de combinaciones. Si una resuelve el problema, aplica la que menos toca tu diseño original. Si ninguna alcanza el objetivo, te lo dice de frente, con el número exacto que falta.</p>
     </div>
     <div class="bento-grid">
       <div class="b-card b-2 rv">
         <div class="b-kicker">Fase 1</div>
         <h3>Eliges la pieza problemática</h3>
-        <p>Seleccionas el accesorio —una T, un codo, una transición— que más presión le está costando al sistema.</p>
+        <p>Seleccionas el accesorio (una T, un codo, una transición) que más presión le está costando al sistema.</p>
       </div>
       <div class="b-card b-2 rv">
         <div class="b-kicker">Fase 2</div>
@@ -515,20 +502,106 @@ details.embed[open] .flecha{transform:rotate(90deg)}
       </div>
       <div class="b-card b-2 rv">
         <div class="b-kicker">Fase 3</div>
-        <h3>Aplica el cambio mínimo que funciona</h3>
-        <p>De las opciones que sí resuelven el problema, elige la que menos modifica tu diseño: la corrección más simple posible, no un rediseño completo.</p>
+        <h3>Te dice si hay solución, o cuál es el límite</h3>
+        <p>Si una combinación cumple el objetivo, aplica la de menor cambio dimensional. Si ninguna alcanza, muestra la mejor opción posible y cuánto falta, en vez de ocultar el problema.</p>
       </div>
     </div>
     <div class="rv" style="margin-top:32px;max-width:1100px;margin-left:auto;margin-right:auto">
       <div class="sec-head" style="margin-bottom:22px;max-width:none">
         <div class="b-kicker" style="text-align:center">En la práctica</div>
         <h3 style="font-size:clamp(21px,2.4vw,27px);font-weight:800;letter-spacing:-.02em;margin-bottom:8px">Así se ve mientras trabaja.</h3>
-        <p class="sub">El asistente muestra en vivo cuántas combinaciones cumplen el objetivo y qué tanto se aleja cada una del diseño original. Tú revisas y aplicas con un clic.</p>
+        <p class="sub">En esta corrida, ninguna de las 60 combinaciones probadas alcanzó el objetivo de presión. El asistente lo marca en rojo y entrega la mejor opción encontrada, con el faltante exacto, para saber si conviene ajustar el margen o intervenir la ruta crítica.</p>
       </div>
       <div class="shot">
         <!-- FLX-IMG: captura reemplazable -->
-        <img class="zoomable" src="screenshots/optimizador_asistente.png?v=3" alt="Asistente de optimización de fittings de Fluxio" onerror="this.style.display='none'">
+        <img class="zoomable" src="screenshots/optimizador_asistente.png?v=3" alt="Asistente de optimización de fittings de Fluxio: ninguna combinación alcanzó el objetivo y el asistente muestra el faltante exacto" onerror="this.style.display='none'">
       </div>
+    </div>
+
+    <!-- ── Diagrama: qué pasa por dentro del barrido ── -->
+    <div class="rv" style="margin-top:56px">
+      <div class="sec-head" style="margin-bottom:26px">
+        <div class="b-kicker" style="text-align:center">Por dentro</div>
+        <h3 style="font-size:clamp(21px,2.4vw,27px);font-weight:800;letter-spacing:-.02em;margin-bottom:8px">Lo que pasa mientras el asistente busca.</h3>
+        <p class="sub">Dos fases de barrido sobre miles de combinaciones geométricas válidas, y dos desenlaces posibles.</p>
+      </div>
+      <div class="shot" style="background:var(--tarjeta);padding:8px 4px 4px">
+        <svg viewBox="0 0 1040 470" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block" role="img" aria-label="Diagrama del proceso de búsqueda del optimizador: dos fases de barrido y dos desenlaces posibles, cumplir el objetivo o mostrar el límite real">
+          <style>
+            .dgt{font-family:'Plus Jakarta Sans',system-ui,sans-serif;fill:var(--texto)}
+            .dgm{font-family:'IBM Plex Mono',ui-monospace,monospace;fill:var(--suave)}
+            .dgtitle{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:800;fill:var(--tinta)}
+            .dg-f1{fill:var(--suave)}
+            .dg-f2{fill:var(--azul)}
+            .dg-pick{fill:var(--azul);stroke:var(--tarjeta);stroke-width:2.5}
+            .dg-base{stroke:var(--no);stroke-width:1.6;stroke-dasharray:5 4}
+            .dg-obj{stroke:var(--ok);stroke-width:1.6;stroke-dasharray:5 4}
+            .dg-axis{stroke:var(--borde);stroke-width:1.4}
+          </style>
+
+          <!-- Leyenda -->
+          <g transform="translate(0,26)">
+            <circle cx="70" cy="0" r="4.5" class="dg-f1"/><text x="82" y="4" class="dgm" font-size="11.5">Fase 1 · búsqueda amplia</text>
+            <circle cx="290" cy="0" r="4.5" class="dg-f2"/><text x="302" y="4" class="dgm" font-size="11.5">Fase 2 · refinamiento fino</text>
+            <circle cx="520" cy="0" r="6" class="dg-pick"/><text x="534" y="4" class="dgm" font-size="11.5">Mejor encontrado</text>
+            <line x1="740" y1="0" x2="762" y2="0" class="dg-base"/><text x="768" y="4" class="dgm" font-size="11.5">Línea base</text>
+            <line x1="880" y1="0" x2="902" y2="0" class="dg-obj"/><text x="908" y="4" class="dgm" font-size="11.5">Objetivo</text>
+          </g>
+
+          <!-- Panel A: cumple -->
+          <g transform="translate(30,60)">
+            <text x="0" y="0" class="dgtitle" font-size="15.5">Caso A · una combinación cumple</text>
+            <line x1="0" y1="290" x2="460" y2="290" class="dg-axis"/>
+            <line x1="0" y1="20" x2="0" y2="290" class="dg-axis"/>
+            <line x1="10" y1="60" x2="450" y2="60" class="dg-base"/>
+            <line x1="10" y1="210" x2="450" y2="210" class="dg-obj"/>
+            <g class="dg-f1">
+              <circle cx="40" cy="110" r="4"/><circle cx="70" cy="180" r="4"/><circle cx="55" cy="240" r="4"/>
+              <circle cx="100" cy="80" r="4"/><circle cx="120" cy="150" r="4"/><circle cx="140" cy="220" r="4"/>
+              <circle cx="160" cy="95" r="4"/><circle cx="180" cy="255" r="4"/><circle cx="200" cy="135" r="4"/>
+              <circle cx="220" cy="190" r="4"/><circle cx="240" cy="75" r="4"/><circle cx="260" cy="245" r="4"/>
+              <circle cx="280" cy="120" r="4"/><circle cx="300" cy="170" r="4"/><circle cx="320" cy="205" r="4"/>
+              <circle cx="340" cy="90" r="4"/>
+            </g>
+            <g class="dg-f2">
+              <circle cx="245" cy="200" r="4.2"/><circle cx="260" cy="222" r="4.2"/><circle cx="275" cy="195" r="4.2"/>
+              <circle cx="290" cy="230" r="4.2"/><circle cx="305" cy="212" r="4.2"/><circle cx="320" cy="198" r="4.2"/>
+              <circle cx="335" cy="225" r="4.2"/><circle cx="265" cy="238" r="4.2"/><circle cx="310" cy="188" r="4.2"/>
+            </g>
+            <circle cx="320" cy="228" r="7" class="dg-pick"/>
+            <text x="0" y="325" class="dgt" font-size="13.5" font-weight="600">→ Cumple: aplica la de menor cambio dimensional.</text>
+            <text x="0" y="346" class="dgm" font-size="11">Eje X: cambio dimensional (%) — Eje Y: pérdida total (Pa)</text>
+          </g>
+
+          <!-- Panel B: no cumple -->
+          <g transform="translate(550,60)">
+            <text x="0" y="0" class="dgtitle" font-size="15.5">Caso B · ninguna combinación cumple</text>
+            <line x1="0" y1="290" x2="460" y2="290" class="dg-axis"/>
+            <line x1="0" y1="20" x2="0" y2="290" class="dg-axis"/>
+            <line x1="10" y1="60" x2="450" y2="60" class="dg-base"/>
+            <line x1="10" y1="260" x2="450" y2="260" class="dg-obj"/>
+            <g class="dg-f1">
+              <circle cx="40" cy="115" r="4"/><circle cx="70" cy="170" r="4"/><circle cx="55" cy="230" r="4"/>
+              <circle cx="100" cy="90" r="4"/><circle cx="120" cy="155" r="4"/><circle cx="140" cy="210" r="4"/>
+              <circle cx="160" cy="100" r="4"/><circle cx="180" cy="245" r="4"/><circle cx="200" cy="140" r="4"/>
+              <circle cx="220" cy="185" r="4"/><circle cx="240" cy="80" r="4"/><circle cx="260" cy="235" r="4"/>
+              <circle cx="280" cy="125" r="4"/><circle cx="300" cy="165" r="4"/><circle cx="320" cy="200" r="4"/>
+              <circle cx="340" cy="95" r="4"/>
+            </g>
+            <g class="dg-f2">
+              <circle cx="245" cy="110" r="4.2"/><circle cx="260" cy="130" r="4.2"/><circle cx="275" cy="105" r="4.2"/>
+              <circle cx="290" cy="135" r="4.2"/><circle cx="305" cy="118" r="4.2"/><circle cx="320" cy="108" r="4.2"/>
+              <circle cx="335" cy="128" r="4.2"/><circle cx="265" cy="140" r="4.2"/><circle cx="310" cy="100" r="4.2"/>
+            </g>
+            <circle cx="320" cy="108" r="7" class="dg-pick"/>
+            <line x1="320" y1="115" x2="320" y2="256" stroke="var(--no)" stroke-width="1.4" stroke-dasharray="3 3"/>
+            <text x="330" y="188" class="dgm" font-size="10.5">falta</text>
+            <text x="0" y="325" class="dgt" font-size="13.5" font-weight="600">→ No cumple: muestra el mejor encontrado y cuánto falta.</text>
+            <text x="0" y="346" class="dgm" font-size="11">Eje X: cambio dimensional (%) — Eje Y: pérdida total (Pa)</text>
+          </g>
+        </svg>
+      </div>
+      <p class="pie">Mismo algoritmo en los dos casos: lo único que cambia es si alguna combinación probada cae por debajo de la línea de objetivo.</p>
     </div>
   </div>
 </section>
@@ -576,7 +649,7 @@ details.embed[open] .flecha{transform:rotate(90deg)}
       <div class="b-card b-6 rv">
         <div class="b-kicker">Diagnóstico</div>
         <h3>Ruta crítica y presión del equipo, de un vistazo</h3>
-        <p>Cada corrida entrega el TESP que debe vencer el ventilador, la ruta más restrictiva de inyección y de retorno, y el detalle de pérdida por sección — para decidir dónde intervenir primero.</p>
+        <p>Cada corrida entrega el TESP que debe vencer el ventilador, la ruta más restrictiva de inyección, la de retorno y el detalle de pérdida por sección, para decidir dónde intervenir primero.</p>
         <div class="b-shot">
           <!-- FLX-IMG: captura reemplazable -->
           <img class="zoomable" src="screenshots/resultados_analisis.png" alt="Resultados del análisis: ruta crítica y TESP en Fluxio" onerror="this.parentElement.style.display='none'">
@@ -585,7 +658,7 @@ details.embed[open] .flecha{transform:rotate(90deg)}
       <div class="b-card b-6 rv">
         <div class="b-kicker">En proyectos reales</div>
         <h3>Probado sobre modelos BIM de edificios reales</h3>
-        <p>La red se dibuja directamente sobre el modelo IFC/STEP del edificio: el ducto vive en el mismo espacio que la estructura, la sala eléctrica y el resto de las disciplinas, no en un plano aislado.</p>
+        <p>La red se dibuja directamente sobre el modelo IFC/STEP del edificio: ocupa el mismo espacio que la estructura, la sala eléctrica y el resto de las disciplinas, en vez de vivir en un plano aislado.</p>
         <div class="b-shot" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--borde)">
           <!-- FLX-IMG: capturas reemplazables -->
           <img class="zoomable" src="screenshots/modelo_ifc_ducto.png" alt="Red de ductos diseñada sobre el modelo IFC de un edificio real" onerror="this.style.display='none'">
@@ -647,7 +720,7 @@ details.embed[open] .flecha{transform:rotate(90deg)}
   <div class="wrap">
     <span class="chip">Quién está detrás</span>
     <h2>Un ingeniero mecánico que busca innovar.</h2>
-    <p>Fluxio partió de una pregunta: <strong>¿puedo construir esto?</strong> Seis meses de física, 3D, normas y código después, la respuesta ya trabaja en dos proyectos de ingeniería y tiene usuarios activos. Si buscas a alguien que convierta problemas complejos en herramientas útiles, hablemos.</p>
+    <p>Fluxio partió de una pregunta: <strong>¿puedo construir esto?</strong> Seis meses de física, 3D, normas y código después, la respuesta ya trabaja en dos proyectos de ingeniería reales. Esta página existe para mostrar de lo que es capaz. Si buscas a alguien que convierta problemas complejos en herramientas útiles, hablemos.</p>
     <div class="estatus">
       <div class="est"><i>Qué es</i><p>Software de escritorio de desarrollo propio, en uso en proyectos reales de ingeniería.</p></div>
       <div class="est"><i>Cómo verlo</i><p>Demostración en vivo del sistema completo, del modelo 3D al informe.</p></div>
