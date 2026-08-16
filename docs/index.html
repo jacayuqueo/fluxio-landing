@@ -252,13 +252,9 @@ html[data-theme="dark"] .hero-grid-bg{opacity:.35}
 .b-shot img{width:100%;display:block}
 .b-doc{position:absolute;right:22px;top:50%;transform:translateY(-50%) rotate(3deg);width:120px;border:1px solid #d8dde5;border-radius:5px;box-shadow:0 12px 28px -10px rgba(15,40,90,.3)}
 .bento-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:44px}
-/* informe embebido plegable */
-details.embed{margin-top:34px;border:1px solid var(--borde);border-radius:var(--radio);overflow:hidden;background:var(--tarjeta)}
-details.embed summary{list-style:none;cursor:pointer;padding:18px 24px;font-size:15.5px;font-weight:700;color:var(--azul);display:flex;align-items:center;gap:10px}
-details.embed summary::-webkit-details-marker{display:none}
-details.embed summary:hover{background:var(--panel)}
-details.embed .flecha{transition:transform .2s;font-size:13px}
-details.embed[open] .flecha{transform:rotate(90deg)}
+/* informe embebido, siempre visible */
+.embed{margin-top:34px;border:1px solid var(--borde);border-radius:var(--radio);overflow:hidden;background:var(--tarjeta)}
+.embed .embed-tit{padding:18px 24px;font-size:15.5px;font-weight:700;color:var(--azul)}
 .pdf-frame{display:block;width:100%;height:620px;border:none;background:#0e1520}
 /* reveals */
 .rv{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
@@ -710,10 +706,10 @@ details.embed[open] .flecha{transform:rotate(90deg)}
         <p class="ficha-link">¿Eres del rubro? Las normas, ecuaciones y la arquitectura del sistema están en la <a href="tecnico.html" target="_blank" rel="noopener">Ficha técnica</a>.</p>
       </div>
     </div>
-    <details class="embed rv" open>
-      <summary><span class="flecha">▶</span> Ver el informe completo aquí mismo, sin descargar nada</summary>
+    <div class="embed rv">
+      <div class="embed-tit">Informe completo, aquí mismo</div>
       <iframe class="pdf-frame" src="report/Reporte_FLX-20260705.pdf?v=2#view=FitH" title="Informe de ingeniería emitido por Fluxio" loading="lazy"></iframe>
-    </details>
+    </div>
   </div>
 </section>
 
